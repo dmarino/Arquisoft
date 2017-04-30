@@ -21,6 +21,8 @@ public class HomeController extends Controller {
         return ok("loaderio-c2b1b157954d782cf1629a87e9aa0e01");
     }
 
+
+
     public Result enviar(){
         SQSConnection sqs = new SQSConnection();
         sqs.sendMessage("Hola");
@@ -34,7 +36,7 @@ public class HomeController extends Controller {
      * <code>GET</code> request with a path of <code>/</code>.
      */
     public Result index() {
-        return ok(index.render(""));
+        return ok(index.render("Your new application is ready."));
     }
 
 
