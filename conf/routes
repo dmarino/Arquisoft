@@ -40,10 +40,10 @@ DELETE  /medico/:id                controllers.MedicoController.deleteMedico(id 
 PUT     /medico/:id                controllers.MedicoController.updateMedico(id : Long)
 
 #Urgencias
-GET     /urgencia                    controllers.UrgenciaController.getUrgencias()
+GET     /urgencias                   controllers.UrgenciaController.getUrgencias()
 GET     /urgencia/:id                controllers.UrgenciaController.getUrgencia(id : Long)
 POST    /urgencia                    controllers.UrgenciaController.createUrgencia()
-DELETE  /urgencia/:id                controllers.UrgenciaController.deleteUrgencia(id : Long)
+DELETE  /eliminarUrgencia/:id        controllers.UrgenciaController.deleteUrgencia(id : Long)
 PUT     /urgencia/:id                controllers.UrgenciaController.updateUrgencia(id : Long)
 
 
