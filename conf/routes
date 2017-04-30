@@ -50,3 +50,4 @@ PUT     /urgencia/:id                controllers.UrgenciaController.updateUrgenc
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 GET     /loaderio-c2b1b157954d782cf1629a87e9aa0e01/ controllers.HomeController.loaderio()
+GET     /hirefire/:hirefire/info   controllers.HireFireController.recibir(hirefire: String)
