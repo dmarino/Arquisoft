@@ -1,4 +1,4 @@
-name := """arquisoft"""
+name := """Arquisoft"""
 
 version := "1.0-SNAPSHOT"
 
