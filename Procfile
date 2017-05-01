@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/arquisoft play run --http.port=\$PORT \$PLAY_OPTS -Dhttp.port=${PORT} -Dplay.evolutions.db.default.autoApply=true -Ddb.default.driver=org.postgresql.Driver
+web: tmp/scala_buildpack_build_dir/project/arquisoft play run --http.port=\$PORT \$PLAY_OPTS -Dhttp.port=${PORT} -Dplay.evolutions.db.default.autoApply=true -Ddb.default.driver=org.postgresql.Driver
