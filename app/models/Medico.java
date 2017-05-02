@@ -1,6 +1,7 @@
 package models;
 
 import com.avaje.ebean.Model;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -57,13 +58,11 @@ public class Medico extends Model {
     /**
      * Constructor 1
      *
-     * @param id           Identificación de medico
      * @param nombre       Nombre del medico
      * @param especialidad Especialidad que posee el medico
      * @param descripcion  Información adicional del medico
      */
-    public Medico(long id, String nombre, String especialidad, String descripcion) {
-        this.idMedico = id;
+    public Medico( String nombre, String especialidad, String descripcion) {
         this.nombreMedico = nombre;
         this.especialidadMedico = especialidad;
         this.descripcionMedico = descripcion;
@@ -156,6 +155,7 @@ public class Medico extends Model {
 
         return paciente;
     }
+
 }
 
     //public String toString()

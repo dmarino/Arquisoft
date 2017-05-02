@@ -2,12 +2,25 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# An example controller showing a sample home page
-GET     /                           controllers.HomeController.index
 # An example controller showing how to use dependency injection
 GET     /count                      controllers.CountController.count
 # An example controller showing how to write asynchronous code
 GET     /message                    controllers.AsyncController.message
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+
+#Interfaz
+GET     /HospitalSantaFe                            controllers.HomeController.index()
+GET     /HospitalSantaFe/login                      controllers.HomeController.login()
+GET     /HospitalSantaFe/perfil                     controllers.HomeController.perfil()
+GET     /HospitalSantaFe/pacientes                  controllers.PacienteController.lista()
+GET     /HospitalSantaFe/pacientes/:id              controllers.PacienteController.detalle(id : Long)
+GET     /HospitalSantaFe/medicos                    controllers.MedicoController.lista()
+GET     /HospitalSantaFe/medicos/:id                controllers.MedicoController.detalle(id : Long)
+GET     /HospitalSantaFe/consejos                   controllers.ConsejoController.lista()
+GET     /HospitalSantaFe/mediciones                 controllers.MedicionController.lista()
+
 
 #paciente
 GET     /paciente                    controllers.PacienteController.getPacientes()
@@ -28,16 +41,16 @@ PUT     /sensor/:idSensor            controllers.SensorController.updateSensor(i
 GET     /medicion                    controllers.MedicionController.getMediciones()
 GET     /medicion/:id                controllers.MedicionController.getMedicion(id : Long)
 GET     /medicion/enRango/           controllers.MedicionController.getByFechas(inicio: String, fin : String)
-POST    /medicion                    controllers.MedicionController.createMedicion()
+POST    /paciente/:id/medicion       controllers.PacienteController.agregarMedicion(id:  Long)
 DELETE  /medicion/:id                controllers.MedicionController.deleteMedicion(id : Long)
 PUT     /medicion/:id                controllers.MedicionController.updateMedicion(id : Long)
 
 #Medico
-GET     /medico                    controllers.MedicoController.getMedicos()
-GET     /medico/:id                controllers.MedicoController.getMedico(id : Long)
-POST    /medico                    controllers.MedicoController.createMedico()
-DELETE  /medico/:id                controllers.MedicoController.deleteMedico(id : Long)
-PUT     /medico/:id                controllers.MedicoController.updateMedico(id : Long)
+GET     /medico                      controllers.MedicoController.getMedicos()
+GET     /medico/:id                  controllers.MedicoController.getMedico(id : Long)
+POST    /medico                      controllers.MedicoController.createMedico()
+DELETE  /medico/:id                  controllers.MedicoController.deleteMedico(id : Long)
+PUT     /medico/:id                  controllers.MedicoController.updateMedico(id : Long)
 
 #Urgencias
 GET     /urgencias                   controllers.UrgenciaController.getUrgencias()
@@ -47,9 +60,18 @@ DELETE  /eliminarUrgencia/:id        controllers.UrgenciaController.deleteUrgenc
 PUT     /urgencia/:id                controllers.UrgenciaController.updateUrgencia(id : Long)
 
 
+<<<<<<< HEAD
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 GET     /loaderio-c2b1b157954d782cf1629a87e9aa0e01/ controllers.HomeController.loaderio()
 GET     /enviar                                      controllers.HomeController.enviar()
 
 GET     /hirefire/:hirefire/info   controllers.HireFireController.recibir(hirefire: String)
+=======
+#Consejo
+GET     /consejo                    controllers.ConsejoController.getConsejos()
+GET     /consejo/:id                controllers.ConsejoController.getConsejo(id : Long)
+POST    /paciente/:id/consejo       controllers.PacienteController.agregarConsejo(id:  Long)
+DELETE  /consejo/:id                controllers.ConsejoController.deleteConsejo(id : Long)
+PUT     /consejo/:id                controllers.ConsejoController.updateConsejo(id : Long)
+>>>>>>> ecf651e77f6d7d374dc0bf5abaaeea879bfe955b

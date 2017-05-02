@@ -3,6 +3,15 @@
 
 # --- !Ups
 
+create table consejos (
+  id                            bigint not null,
+  tema                          varchar(255),
+  consejo                       varchar(255),
+  paciente_documento            bigint,
+  constraint pk_consejos primary key (id)
+);
+create sequence ConsejoEntity;
+
 create table mediciones (
   referencia                    bigint not null,
   estado                        varchar(255),
@@ -66,6 +75,9 @@ create table urgencia (
 );
 create sequence UrgenciaEntity;
 
+alter table consejos add constraint fk_consejos_paciente_documento foreign key (paciente_documento) references paciente (documento) on delete restrict on update restrict;
+create index ix_consejos_paciente_documento on consejos (paciente_documento);
+
 alter table mediciones add constraint fk_mediciones_paciente_documento foreign key (paciente_documento) references paciente (documento) on delete restrict on update restrict;
 create index ix_mediciones_paciente_documento on mediciones (paciente_documento);
 
@@ -81,6 +93,9 @@ create index ix_sensores_paciente_documento on sensores (paciente_documento);
 
 # --- !Downs
 
+alter table if exists consejos drop constraint if exists fk_consejos_paciente_documento;
+drop index if exists ix_consejos_paciente_documento;
+
 alter table if exists mediciones drop constraint if exists fk_mediciones_paciente_documento;
 drop index if exists ix_mediciones_paciente_documento;
 
@@ -92,6 +107,9 @@ drop index if exists ix_registro_sensor_id;
 
 alter table if exists sensores drop constraint if exists fk_sensores_paciente_documento;
 drop index if exists ix_sensores_paciente_documento;
+
+drop table if exists consejos cascade;
+drop sequence if exists ConsejoEntity;
 
 drop table if exists mediciones cascade;
 drop sequence if exists MedicionEntity;
