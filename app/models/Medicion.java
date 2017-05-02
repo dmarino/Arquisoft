@@ -1,6 +1,7 @@
 package models;
 
 import com.avaje.ebean.Model;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.jetbrains.annotations.NotNull;
 
@@ -18,7 +19,6 @@ public class Medicion extends Model
 
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="MedicionEntity")
-
     private Long referencia;
 
     private String estado;
@@ -35,6 +35,7 @@ public class Medicion extends Model
     private Calendar fecha;
 
     @ManyToOne
+    @JsonBackReference(value="paciente")
     private Paciente paciente;
 
     //-----------------------------------------------------------
@@ -49,16 +50,14 @@ public class Medicion extends Model
         this.frecuencia = frecuencia;
         this.estres = estres;
         this.presion = presion;
-        this.paciente = paciente;
         this.fecha =Calendar.getInstance();
     }
 
-    public Medicion(String estado, String frecuencia, String estres, String presion, Paciente paciente) {
+    public Medicion(String estado, String frecuencia, String estres, String presion) {
         this.estado = estado;
         this.frecuencia = frecuencia;
         this.estres = estres;
         this.presion = presion;
-        this.paciente = paciente;
         this.fecha =Calendar.getInstance();
     }
 

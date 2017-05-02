@@ -1,0 +1,104 @@
+@(paciente: Paciente)
+
+@main("Hospital Cardiologico de Santa Fe") {
+<div class="container-fluid">
+    <div id="page-wrapper">
+        <div class="container">
+            <h1>&nbsp;</h1>
+            <h2 class="panel-title">@paciente.getNombre()</h2>
+        </div>
+
+        <div class="row">
+            <div class="span3">
+                <ul id="sidebar" class="nav nav-stacked affix">
+                    <li><a href="#">Dar un consejo</a></li>
+                    <li><a href="#">Editar Informacion</a></li>
+                    <li><a href="#">Mediciones Historicas</a></li>
+                </ul>
+            </div>
+            <div class="span3">
+                <img src="http://www.zenithholidays.com/img/icon4.png" />
+            </div>
+            <div class="span6">
+                <table class="table table-user-information">
+                    <tbody>
+                    <tr>
+                        <td>Documento:</td>
+                        <td>@paciente.getDocumento()</td>
+                    </tr>
+                    <tr>
+                        <td>pais:</td>
+                        <td>@paciente.getPais()</td>
+                    </tr>
+                    <tr>
+                        <td>Ciudad:</td>
+                        <td>@paciente.getCiudad()</td>
+                    </tr>
+
+                    <tr>
+                    <tr>
+                        <td>Telefono:</td>
+                        <td>@paciente.getTelefono()</td>
+                    </tr>
+                    <tr>
+                        <td>Tipo Sangre:</td>
+                        <td>@paciente.getTipoSangre()</td>
+                    </tr>
+                    <tr>
+                        <td>Tratamientos:</td>
+                        <td>@paciente.getTratamientos()</td>
+
+                    </tr>
+                    <tr>
+                        <td>Examenes:</td>
+                        <td>@paciente.getExamenes()</td>
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="container">
+            <h3 class="panel-title">Mediciones</h3>
+        </div>
+
+        <div class="row">
+            <div class="span2">
+            </div>
+            <div class="span10">
+                <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                    <thead>
+                    <tr>
+                        <th>Referencia</th>
+                        <th>Fecha</th>
+                        <th>Frecuencia Cardiaca</th>
+                        <th>Presion</th>
+                        <th>Estres</th>
+                        <th>Estado</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @for(medicion <- paciente.getMedicionesHistoricas()) {
+                    <tr>
+                        <td>@medicion.getReferencia()</td>
+                        <td>@medicion.getFecha().getTime()</td>
+                        <td>@medicion.getFrecuencia()</td>
+                        <td>@medicion.getPresion()</td>
+                        <td>@medicion.getEstres()</td>
+                        <td>@medicion.getEstado()</td>
+                    </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container" align="center">
+        <p class="text-muted"> <a href="@routes.HomeController.index()">inicio</a> - <a href="@routes.PacienteController.lista()">pacientes</a> - @paciente.getNombre()</p>
+    </div>
+</footer>
+}

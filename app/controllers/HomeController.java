@@ -17,8 +17,15 @@ public class HomeController extends Controller {
      * <code>GET</code> request with a path of <code>/</code>.
      */
     public Result index() {
-        return ok(home.render());
+        return ok(index.render("Hospital Cardiologico de Santa Fe"));
     }
-    //public Result index() {return ok(index.render("hospital santa fe"));}
+
+    public Result login() {
+        return ok(login.render());
+    }
+
+    public Result perfil() {
+        return ok(login.render());
+    }
 
 }

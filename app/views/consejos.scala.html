@@ -1,0 +1,38 @@
+@(consejos: List[Consejo])
+
+@main("Hospital Cardiologico de Santa Fe") {
+
+<div class="container">
+    <div id="page-wrapper">
+        <h1>&nbsp;</h1>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                    <thead>
+                    <tr>
+                        <th>Tema</th>
+                        <th>Consejo</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @for(consejo <- consejos) {
+                    <tr>
+                        <td>@consejo.getTema()</td>
+                        <td>@consejo.getConsejo()</td>
+                    </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div> <!-- /container -->
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted"> <a href="@routes.HomeController.index()">inicio</a> - consejos</p>
+    </div>
+</footer>
+
+}

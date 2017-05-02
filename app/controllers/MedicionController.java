@@ -4,6 +4,7 @@ import akka.dispatch.MessageDispatcher;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.google.inject.Inject;
 import dispatchers.AkkaDispatcher;
+import models.Consejo;
 import models.Medicion;
 import play.libs.Json;
 import play.libs.concurrent.HttpExecutionContext;
@@ -13,6 +14,7 @@ import play.mvc.Result;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
@@ -148,5 +150,14 @@ public class MedicionController extends Controller {
                             return ok(toJson(Medicion));
                         }
                 );
+    }
+
+    public Result lista() {
+        List<Medicion> m= Medicion.FINDER.all();
+        return ok(views.html.mediciones.render(m));
+    }
+
+    public Result detalle(Long id) {
+        return ok(views.html.login.render());
     }
 }

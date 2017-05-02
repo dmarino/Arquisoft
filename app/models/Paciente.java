@@ -1,6 +1,7 @@
 package models;
 
 import com.avaje.ebean.Model;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -17,7 +18,6 @@ public class Paciente extends Model
     public static Finder<Long, Paciente> FINDER = new Finder<>(Paciente.class);
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PacienteEntity")
-
     private long documento;
 
     private String nombre;
@@ -40,8 +40,11 @@ public class Paciente extends Model
     private String examenes;
 
     @ManyToOne
-
+    @JsonBackReference(value="medico")
     private Medico medico;
+
+    @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL)
+    private List<Consejo> consejos;
 
 
     //-----------------------------------------------------------
@@ -59,9 +62,10 @@ public class Paciente extends Model
         medicionesHistoricas=new ArrayList<Medicion>();
         this.tratamientos=tratamientos;
         this.examenes=examenes;
+        consejos = new ArrayList<Consejo>();
     }
 
-    public Paciente(long documento, String nombre, String tipoSangre, String pais, String ciudad, long telefono, long celular, List<Medicion> medicionesHistoricas, String tratamientos, String examenes) {
+    public Paciente(long documento, String nombre, String tipoSangre, String pais, String ciudad, long telefono, long celular, List<Medicion> medicionesHistoricas, String tratamientos, String examenes, List<Consejo> consejos) {
         this.documento = documento;
         this.nombre = nombre;
         this.tipoSangre = tipoSangre;
@@ -72,6 +76,7 @@ public class Paciente extends Model
         this.medicionesHistoricas=medicionesHistoricas;
         this.tratamientos=tratamientos;
         this.examenes=examenes;
+        this.consejos=consejos;
     }
 
 
@@ -167,5 +172,13 @@ public class Paciente extends Model
 
     public void setMedico(Medico medico) {
         this.medico = medico;
+    }
+
+    public List<Consejo> getConsejos() {
+        return consejos;
+    }
+
+    public void setConsejos(List<Consejo> consejos) {
+        this.consejos = consejos;
     }
 }

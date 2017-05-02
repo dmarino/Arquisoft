@@ -5,11 +5,13 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.google.inject.Inject;
 import dispatchers.AkkaDispatcher;
 import models.Medico;
+import models.Paciente;
 import play.libs.Json;
 import play.libs.concurrent.HttpExecutionContext;
 import play.mvc.Controller;
 import play.mvc.Result;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
@@ -253,4 +255,14 @@ public class MedicoController extends Controller
                      //   }
                 //);
     //}
+
+    public Result lista() {
+        List<Medico> m= Medico.FINDER.all();
+        return ok(views.html.medicos.render(m));
+    }
+
+    public Result detalle(Long id) {
+        Medico m = Medico.FINDER.byId(id);
+        return ok(views.html.medico.render(m));
+    }
 }

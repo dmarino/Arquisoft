@@ -4,12 +4,16 @@ import akka.dispatch.MessageDispatcher;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.google.inject.Inject;
 import dispatchers.AkkaDispatcher;
+import models.Consejo;
+import models.Medicion;
+import models.Medico;
 import models.Paciente;
 import play.libs.Json;
 import play.libs.concurrent.HttpExecutionContext;
 import play.mvc.Controller;
 import play.mvc.Result;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
@@ -140,5 +144,73 @@ public class PacienteController extends Controller {
                         }
                 );
     }
+
+    public CompletionStage<Result> agregarMedicion(long id){
+
+        MessageDispatcher jdbcDispatcher = AkkaDispatcher.jdbcDispatcher;
+
+        JsonNode p = request().body().asJson();
+        Medicion m = Json.fromJson(p, Medicion.class);
+
+        return CompletableFuture.
+                supplyAsync(
+                        () -> {
+
+                            Paciente pPorActualizar = Paciente.FINDER.byId(id);
+
+                            pPorActualizar.getMedicionesHistoricas().add(0,m);
+
+                            pPorActualizar.update();
+
+                            m.save();
+                            return m;
+
+                        }
+                        ,ec.current())
+                .thenApply(
+                        medicion -> {
+                            return ok(toJson(m));
+                        }
+                );
+    }
+
+    public CompletionStage<Result> agregarConsejo(long id){
+
+        MessageDispatcher jdbcDispatcher = AkkaDispatcher.jdbcDispatcher;
+
+        JsonNode p = request().body().asJson();
+        Consejo m = Json.fromJson(p, Consejo.class);
+
+        return CompletableFuture.
+                supplyAsync(
+                        () -> {
+
+                            Paciente pPorActualizar = Paciente.FINDER.byId(id);
+                            pPorActualizar.getConsejos().add(0,m);
+                            pPorActualizar.update();
+
+                            m.save();
+                            return m;
+
+                        }
+                        ,ec.current())
+                .thenApply(
+                        consejo -> {
+                            return ok(toJson(m));
+                        }
+                );
+    }
+
+    public Result lista() {
+
+        List<Paciente> p= Paciente.FINDER.all();
+        return ok(views.html.pacientes.render(p));
+    }
+
+    public Result detalle(Long id) {
+        Paciente p = Paciente.FINDER.byId(id);
+        return ok(views.html.paciente.render(p));
+    }
+
 }
 
