@@ -45,7 +45,6 @@ public class HomeController extends Controller {
 
     public Result perfil() {
         return ok(login.render());
->>>>>>> ecf651e77f6d7d374dc0bf5abaaeea879bfe955b
     }
 
 
