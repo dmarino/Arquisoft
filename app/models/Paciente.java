@@ -51,6 +51,9 @@ public class Paciente extends Model
     // Constructores
     //-----------------------------------------------------------
 
+    public Paciente(){
+
+    }
     public Paciente(long documento, String nombre, String tipoSangre, String pais, String ciudad, long telefono, long celular, String tratamientos, String examenes) {
         this.documento = documento;
         this.nombre = nombre;
