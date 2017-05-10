@@ -1,0 +1,7 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(C:\Users\Juan\Documents\Arquisoft\Proyecto\ProyectoNuevo2\Arquisoft\conf\application.conf,C:\Users\Juan\Documents\Arquisoft\Proyecto\ProyectoNuevo2\Arquisoft\target\scala-2.11\classes\application.conf)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\Juan\Documents\Arquisoft\Proyecto\ProyectoNuevo2\Arquisoft\conf\evolutions,C:\Users\Juan\Documents\Arquisoft\Proyecto\ProyectoNuevo2\Arquisoft\target\scala-2.11\classes\evolutions)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\Juan\Documents\Arquisoft\Proyecto\ProyectoNuevo2\Arquisoft\conf\logback.xml,C:\Users\Juan\Documents\Arquisoft\Proyecto\ProyectoNuevo2\Arquisoft\target\scala-2.11\classes\logback.xml)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\Juan\Documents\Arquisoft\Proyecto\ProyectoNuevo2\Arquisoft\conf\routes,C:\Users\Juan\Documents\Arquisoft\Proyecto\ProyectoNuevo2\Arquisoft\target\scala-2.11\classes\routes)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\Juan\Documents\Arquisoft\Proyecto\ProyectoNuevo2\Arquisoft\conf\evolutions\default,C:\Users\Juan\Documents\Arquisoft\Proyecto\ProyectoNuevo2\Arquisoft\target\scala-2.11\classes\evolutions\default)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\Juan\Documents\Arquisoft\Proyecto\ProyectoNuevo2\Arquisoft\conf\evolutions\default\1.sql,C:\Users\Juan\Documents\Arquisoft\Proyecto\ProyectoNuevo2\Arquisoft\target\scala-2.11\classes\evolutions\default\1.sql)[0m
