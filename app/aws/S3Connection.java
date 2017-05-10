@@ -32,8 +32,8 @@ public class S3Connection  {
     }
 
     public void onStart() {
-        String accessKey = ConfigFactory.load().getString(AWS_ACCESS_KEY);
-        String secretKey = ConfigFactory.load().getString(AWS_SECRET_KEY);
+        String accessKey = "AKIAJ7VUOPUHMWEB3THQ";
+        String secretKey = "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";
         s3Bucket = ConfigFactory.load().getString(AWS_S3_BUCKET);
 
         if ((accessKey != null) && (secretKey != null)) {
