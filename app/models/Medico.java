@@ -47,8 +47,12 @@ public class Medico extends Model {
      */
     private String descripcionMedico;
 
+    private String email;
+    private String contrasena;
+    private String tipo;
 
-    @OneToMany(mappedBy = "medico", cascade = CascadeType.ALL)
+    @ManyToMany
+    @JsonBackReference
     private List<Paciente> pacientesDelMedico;
 
     //-------------------------------------------------------------
@@ -62,19 +66,25 @@ public class Medico extends Model {
      * @param especialidad Especialidad que posee el medico
      * @param descripcion  Información adicional del medico
      */
-    public Medico( String nombre, String especialidad, String descripcion) {
+    public Medico( String nombre, String especialidad, String descripcion,String email, String contrasena, String tipo) {
         this.nombreMedico = nombre;
         this.especialidadMedico = especialidad;
         this.descripcionMedico = descripcion;
+        this.email=email;
+        this.contrasena=contrasena;
+        this.tipo=tipo;
         pacientesDelMedico = new ArrayList<Paciente>();
     }
 
-    public Medico(long id, String nombre, String especialidad, String descripcion, List<Paciente> pacientesDoctor) {
+    public Medico(long id, String nombre, String especialidad, String descripcion, String email, String contrasena, List<Paciente> pacientesDoctor, String tipo) {
         this.idMedico = id;
         this.nombreMedico = nombre;
         this.especialidadMedico = especialidad;
         this.descripcionMedico = descripcion;
+        this.email=email;
+        this.contrasena=contrasena;
         this.pacientesDelMedico = pacientesDoctor;
+        this.tipo=tipo;
     }
 
     /**
@@ -106,7 +116,7 @@ public class Medico extends Model {
     }
 
     public void setIdMedico(Long idMedico) {
-        this.idMedico = idMedico;
+        this.idMedico=idMedico;
     }
 
     public String getNombreMedico() {
@@ -142,20 +152,29 @@ public class Medico extends Model {
         this.pacientesDelMedico = pacientesDelMedico;
     }
 
-    public Paciente buscarPaciente(int idPaciente)
-    {
-        Paciente paciente = null;
-        for (int i = 0; i < pacientesDelMedico.size(); i++)
-        {
-            if (pacientesDelMedico.get(i).getDocumento() == idPaciente)
-            {
-                return paciente = pacientesDelMedico.get(i);
-            }
-        }
-
-        return paciente;
+    public String getEmail() {
+        return email;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
 }
 
     //public String toString()

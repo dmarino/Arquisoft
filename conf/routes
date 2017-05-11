@@ -25,6 +25,7 @@ GET     /HospitalSantaFe/mediciones                 controllers.MedicionControll
 #paciente
 GET     /paciente                    controllers.PacienteController.getPacientes()
 GET     /paciente/:id                controllers.PacienteController.getPaciente(id : Long)
+GET     /pacienteSimple/:id          controllers.PacienteController.getPacienteSimple(id : Long)
 GET     /paciente/porNombre/:nombre  controllers.PacienteController.getPacienteByName(nombre : String)
 POST    /paciente                    controllers.PacienteController.createPaciente()
 DELETE  /paciente/:id                controllers.PacienteController.deletePaciente(id : Long)
@@ -48,9 +49,11 @@ PUT     /medicion/:id                controllers.MedicionController.updateMedici
 #Medico
 GET     /medico                      controllers.MedicoController.getMedicos()
 GET     /medico/:id                  controllers.MedicoController.getMedico(id : Long)
+GET     /medico                      controllers.MedicoController.getMedicoByEmail(email : String)
 POST    /medico                      controllers.MedicoController.createMedico()
 DELETE  /medico/:id                  controllers.MedicoController.deleteMedico(id : Long)
 PUT     /medico/:id                  controllers.MedicoController.updateMedico(id : Long)
+PUT     /paciente/:id/medico         controllers.PacienteController.asignarMedico(id: Long)
 
 #Urgencias
 GET     /urgencias                   controllers.UrgenciaController.getUrgencias()

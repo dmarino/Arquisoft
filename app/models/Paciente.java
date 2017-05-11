@@ -2,6 +2,7 @@ package models;
 
 import com.avaje.ebean.Model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import dtos.PacienteSimple;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -39,12 +40,15 @@ public class Paciente extends Model
 
     private String examenes;
 
-    @ManyToOne
-    @JsonBackReference(value="medico")
-    private Medico medico;
+    @ManyToMany
+    private List<Medico> medicos;
 
     @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL)
     private List<Consejo> consejos;
+
+    private String email;
+    private String contrasena;
+    private String marcapasos;
 
 
     //-----------------------------------------------------------
@@ -54,7 +58,7 @@ public class Paciente extends Model
     public Paciente(){
 
     }
-    public Paciente(long documento, String nombre, String tipoSangre, String pais, String ciudad, long telefono, long celular, String tratamientos, String examenes) {
+    public Paciente(long documento, String nombre, String tipoSangre, String pais, String ciudad, long telefono, long celular, String tratamientos, String examenes, String marcapasos) {
         this.documento = documento;
         this.nombre = nombre;
         this.tipoSangre = tipoSangre;
@@ -62,13 +66,15 @@ public class Paciente extends Model
         this.ciudad = ciudad;
         this.telefono = telefono;
         this.celular = celular;
+        this.marcapasos=marcapasos;
         medicionesHistoricas=new ArrayList<Medicion>();
         this.tratamientos=tratamientos;
         this.examenes=examenes;
         consejos = new ArrayList<Consejo>();
+        medicos= new ArrayList<Medico>();
     }
 
-    public Paciente(long documento, String nombre, String tipoSangre, String pais, String ciudad, long telefono, long celular, List<Medicion> medicionesHistoricas, String tratamientos, String examenes, List<Consejo> consejos) {
+    public Paciente(long documento, String nombre, String tipoSangre, String pais, String ciudad, long telefono, long celular, List<Medicion> medicionesHistoricas, String tratamientos, String examenes, List<Consejo> consejos, List<Medico> medicos, String marcapasos) {
         this.documento = documento;
         this.nombre = nombre;
         this.tipoSangre = tipoSangre;
@@ -79,7 +85,9 @@ public class Paciente extends Model
         this.medicionesHistoricas=medicionesHistoricas;
         this.tratamientos=tratamientos;
         this.examenes=examenes;
+        this.medicos=medicos;
         this.consejos=consejos;
+        this.marcapasos=marcapasos;
     }
 
 
@@ -168,20 +176,51 @@ public class Paciente extends Model
         this.examenes = examenes;
     }
 
-    public Medico getMedico() {
-        return medico;
-
-    }
-
-    public void setMedico(Medico medico) {
-        this.medico = medico;
-    }
-
     public List<Consejo> getConsejos() {
         return consejos;
     }
 
     public void setConsejos(List<Consejo> consejos) {
         this.consejos = consejos;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {this.contrasena = contrasena;}
+
+    public List<Medico> getMedicos() {return medicos;}
+
+    public void setMedicos(List<Medico> medicos) {this.medicos = medicos;}
+
+    public String getMarcapasos() {
+        return marcapasos;
+    }
+
+    public void setMarcapasos(String marcapasos) {
+        this.marcapasos = marcapasos;
+    }
+
+    public PacienteSimple darPacienteSimple(){
+        PacienteSimple p = new PacienteSimple();
+        p.setDocumento(documento);
+        p.setNombre(nombre);
+        p.setTipoSangre(tipoSangre);
+        p.setPais(pais);
+        p.setCiudad(ciudad);
+        p.setTelefono(telefono);
+        p.setCelular(celular);
+        p.setEmail(email);
+        p.setContrasena(contrasena);
+        return p;
     }
 }

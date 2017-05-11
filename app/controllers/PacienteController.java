@@ -62,6 +62,22 @@ public class PacienteController extends Controller {
                 );
     }
 
+    public CompletionStage<Result> getPacienteSimple(long id){
+        MessageDispatcher jdbcDispatcher = AkkaDispatcher.jdbcDispatcher;
+
+        return CompletableFuture.
+                supplyAsync(
+                        () -> {
+                            return Paciente.FINDER.byId(id);
+                        }
+                        ,jdbcDispatcher)
+                .thenApply(
+                        pacientes -> {
+                            return ok(toJson(pacientes.darPacienteSimple()));
+                        }
+                );
+    }
+
     public CompletionStage<Result> getPacienteByName(String name){
         MessageDispatcher jdbcDispatcher = AkkaDispatcher.jdbcDispatcher;
 
@@ -83,6 +99,7 @@ public class PacienteController extends Controller {
 
         JsonNode p = request().body().asJson();
         Paciente paciente = Json.fromJson(p, Paciente.class);
+
         return CompletableFuture.supplyAsync(
                 () -> {
                     paciente.save();
@@ -126,12 +143,14 @@ public class PacienteController extends Controller {
                             pPorActualizar.setCiudad(paciente.getCiudad());
                             pPorActualizar.setExamenes(paciente.getExamenes());
                             pPorActualizar.setMedicionesHistoricas(paciente.getMedicionesHistoricas());
-                            pPorActualizar.setMedico(paciente.getMedico());
+                            pPorActualizar.setMedicos(paciente.getMedicos());
                             pPorActualizar.setNombre(paciente.getNombre());
                             pPorActualizar.setPais(paciente.getPais());
                             pPorActualizar.setTelefono(paciente.getTelefono());
                             pPorActualizar.setTratamientos(paciente.getTratamientos());
+                            pPorActualizar.setEmail(paciente.getEmail());
 
+                            
                             pPorActualizar.update();
 
                             return pPorActualizar;
@@ -197,6 +216,36 @@ public class PacienteController extends Controller {
                 .thenApply(
                         consejo -> {
                             return ok(toJson(m));
+                        }
+                );
+    }
+
+    public CompletionStage<Result> asignarMedico(long id){
+
+        MessageDispatcher jdbcDispatcher = AkkaDispatcher.jdbcDispatcher;
+
+        JsonNode p = request().body().asJson();
+        Medico m = Json.fromJson(p, Medico.class);
+
+        return CompletableFuture.
+                supplyAsync(
+                        () -> {
+
+                            Medico mPorActualizar = Medico.FINDER.byId(m.getIdMedico());
+
+                            Paciente pPorActualizar = Paciente.FINDER.byId(id);
+                            pPorActualizar.getMedicos().add(mPorActualizar);
+                            pPorActualizar.update();
+
+                            mPorActualizar.getPacientesDelMedico().add(pPorActualizar);
+                            mPorActualizar.update();
+                            return pPorActualizar;
+
+                        }
+                        ,ec.current())
+                .thenApply(
+                        paciente -> {
+                            return ok(toJson(paciente));
                         }
                 );
     }

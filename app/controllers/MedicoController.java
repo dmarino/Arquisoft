@@ -256,6 +256,22 @@ public class MedicoController extends Controller
                 //);
     //}
 
+    public CompletionStage<Result> getMedicoByEmail(String email){
+        MessageDispatcher jdbcDispatcher = AkkaDispatcher.jdbcDispatcher;
+
+        return CompletableFuture.
+                supplyAsync(
+                        () -> {
+                            return Medico.FINDER.where().eq("email",email).findUnique();
+                        }
+                        ,jdbcDispatcher)
+                .thenApply(
+                        medico -> {
+                            return ok(toJson(medico));
+                        }
+                );
+    }
+
     public Result lista() {
         List<Medico> m= Medico.FINDER.all();
         return ok(views.html.medicos.render(m));
