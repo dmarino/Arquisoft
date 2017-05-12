@@ -15,7 +15,7 @@ libraryDependencies ++= Seq(
   "org.webjars" % "bootstrap" % "4.0.0-alpha.6-1",
   "org.webjars" % "jquery" % "2.1.4",
   "com.adrianhurt" %% "play-bootstrap3" % "0.4.5-P24",
-  "com.amazonaws" % "aws-java-sdk" % "1.11.46",
+  "com.amazonaws" % "aws-java-sdk" % "1.11.46"
 
 )
 
