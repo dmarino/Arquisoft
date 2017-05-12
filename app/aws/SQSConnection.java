@@ -35,8 +35,8 @@ public class SQSConnection {
     }
 
     public void onStart() {
-        String accessKey = "AKIAJ7VUOPUHMWEB3THQ";
-        String secretKey = "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";
+        String accessKey = ConfigFactory.load().getString(AWS_ACCESS_KEY);
+        String secretKey = ConfigFactory.load().getString(AWS_SECRET_KEY);
 
         if ((accessKey != null) && (secretKey != null)) {
             AWSCredentials awsCredentials = new BasicAWSCredentials(accessKey, secretKey);
