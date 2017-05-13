@@ -87,8 +87,8 @@ Seq[Any](format.raw/*1.27*/("""
 object consejos extends consejos_Scope0.consejos
               /*
                   -- GENERATED --
-                  DATE: Mon May 01 23:40:35 COT 2017
-                  SOURCE: C:/Users/Juan/Documents/Arquisoft/Proyecto/ProyectoNuevo2/Arquisoft/app/views/consejos.scala.html
+                  DATE: Thu May 11 00:35:28 COT 2017
+                  SOURCE: C:/Users/PANA/Documents/arquisoft/proyecto/Arquisoft/app/views/consejos.scala.html
                   HASH: 3274e8af14a91d32aace0ca3400ea8adb5411420
                   MATRIX: 758->1|878->26|908->31|957->72|996->74|1026->78|1573->598|1613->622|1653->624|1703->646|1765->681|1781->688|1812->698|1875->734|1891->741|1925->754|2011->809|2061->831|2311->1054|2326->1060|2370->1083|2455->1138
                   LINES: 27->1|32->1|34->3|34->3|34->3|36->5|49->18|49->18|49->18|50->19|51->20|51->20|51->20|52->21|52->21|52->21|54->23|55->24|65->34|65->34|65->34|69->38

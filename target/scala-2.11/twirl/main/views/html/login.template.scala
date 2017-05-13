@@ -76,8 +76,8 @@ Seq[Any](_display_(/*1.2*/main("Hospital Cardiologico de Santa Fe")/*1.43*/ {_di
 object login extends login_Scope0.login
               /*
                   -- GENERATED --
-                  DATE: Mon May 01 23:40:35 COT 2017
-                  SOURCE: C:/Users/Juan/Documents/Arquisoft/Proyecto/ProyectoNuevo2/Arquisoft/app/views/login.scala.html
+                  DATE: Thu May 11 00:35:28 COT 2017
+                  SOURCE: C:/Users/PANA/Documents/arquisoft/proyecto/Arquisoft/app/views/login.scala.html
                   HASH: 8487c244c9417429cc27fbec0f28f27dcc0d5c09
                   MATRIX: 827->1|876->42|915->44|945->48|1837->913|1852->919|1896->942|1979->995
                   LINES: 32->1|32->1|32->1|34->3|54->23|54->23|54->23|58->27
