@@ -4,10 +4,10 @@
 		module="arquisoft_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20170512201732"
+		publication="20170512203545"
 	>
 		<description>
-		Arquisoft
+		arquisoft
 		</description>
 	</info>
 	<configurations>
@@ -48,13 +48,5 @@
 		<dependency org="com.typesafe.play" name="play-cache_2.11" rev="2.5.10" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-ws_2.11" rev="2.5.10" conf="compile->default(compile)"/>
 		<dependency org="org.postgresql" name="postgresql" rev="9.4-1206-jdbc42" conf="compile->default(compile)"/>
-		<dependency org="org.webjars" name="bootstrap" rev="4.0.0-alpha.6-1" conf="compile->default(compile)"/>
-		<dependency org="org.webjars" name="jquery" rev="2.1.4" conf="compile->default(compile)"/>
-		<dependency org="com.adrianhurt" name="play-bootstrap3_2.11" rev="0.4.5-P24" conf="compile->default(compile)"/>
-		<dependency org="com.amazonaws" name="aws-java-sdk" rev="1.11.46" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play-slick_2.11" rev="1.0.1" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play-slick-evolutions_2.11" rev="1.0.1" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.slick" name="slick_2.11" rev="3.0.3" conf="compile->default(compile)"/>
-		<dependency org="org.slf4j" name="slf4j-nop" rev="1.6.4" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>
