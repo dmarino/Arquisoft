@@ -31,6 +31,7 @@ create table medico (
   descripcion_medico            varchar(255),
   email                         varchar(255),
   contrasena                    varchar(255),
+  tipo                          varchar(255),
   constraint pk_medico primary key (id_medico)
 );
 create sequence MedicoEntity;
@@ -53,6 +54,7 @@ create table paciente (
   examenes                      varchar(255),
   email                         varchar(255),
   contrasena                    varchar(255),
+  marcapasos                    varchar(255),
   constraint pk_paciente primary key (documento)
 );
 create sequence PacienteEntity;
@@ -165,4 +167,3 @@ drop sequence if exists SensorEntity;
 
 drop table if exists urgencia cascade;
 drop sequence if exists UrgenciaEntity;
-
