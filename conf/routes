@@ -11,19 +11,19 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 
 #Interfaz
-GET     /HospitalSantaFe                            controllers.HomeController.index()
-GET     /HospitalSantaFe/login                      controllers.HomeController.login()
-GET     /HospitalSantaFe/perfil                     controllers.HomeController.perfil()
-GET     /HospitalSantaFe/pacientes                  controllers.PacienteController.lista()
-GET     /HospitalSantaFe/pacientes/:id              controllers.PacienteController.detalle(id : Long)
-GET     /HospitalSantaFe/medicos                    controllers.MedicoController.lista()
-GET     /HospitalSantaFe/medicos/:id                controllers.MedicoController.detalle(id : Long)
-GET     /HospitalSantaFe/consejos                   controllers.ConsejoController.lista()
-GET     /HospitalSantaFe/mediciones                 controllers.MedicionController.lista()
+GET     /                                           controllers.HomeController.index()
+GET     /login                      controllers.HomeController.login()
+GET     /perfil                     controllers.HomeController.perfil()
+GET     /index/pacientes                  controllers.PacienteController.lista()
+GET     /index/pacientes/:id              controllers.PacienteController.detalle(id : Long)
+GET     /index/medicos                    controllers.MedicoController.lista()
+GET     /index/medicos/:id                controllers.MedicoController.detalle(id : Long)
+GET     /index/consejos                   controllers.ConsejoController.lista()
+GET     /index/mediciones                 controllers.MedicionController.lista()
 
 
 #paciente
-GET     /paciente                    controllers.PacienteController.getPacientes()
+GET     /pacientes                    controllers.PacienteController.getPacientes()
 GET     /paciente/:id                controllers.PacienteController.getPaciente(id : Long)
 GET     /pacienteSimple/:id          controllers.PacienteController.getPacienteSimple(id : Long)
 GET     /paciente/porNombre/:nombre  controllers.PacienteController.getPacienteByName(nombre : String)
@@ -32,14 +32,14 @@ DELETE  /paciente/:id                controllers.PacienteController.deletePacien
 PUT     /paciente/:id                controllers.PacienteController.updatePaciente(id : Long)
 
 #sensor
-GET     /sensor                      controllers.SensorController.getSensores()
+GET     /sensores                      controllers.SensorController.getSensores()
 GET     /sensor/:idSensor            controllers.SensorController.getSensor(idSensor : Long)
 POST    /sensor                      controllers.SensorController.createSensor()
 DELETE  /sensor/:idSensor            controllers.SensorController.deleteSensor(idSensor : Long)
 PUT     /sensor/:idSensor            controllers.SensorController.updateSensor(idSensor : Long)
 
 #Medicion
-GET     /medicion                    controllers.MedicionController.getMediciones()
+GET     /mediciones                    controllers.MedicionController.getMediciones()
 GET     /medicion/:id                controllers.MedicionController.getMedicion(id : Long)
 GET     /medicion/enRango/           controllers.MedicionController.getByFechas(inicio: String, fin : String)
 POST    /paciente/:id/medicion       controllers.PacienteController.agregarMedicion(id:  Long)
@@ -47,7 +47,7 @@ DELETE  /medicion/:id                controllers.MedicionController.deleteMedici
 PUT     /medicion/:id                controllers.MedicionController.updateMedicion(id : Long)
 
 #Medico
-GET     /medico                      controllers.MedicoController.getMedicos()
+GET     /medicos                      controllers.MedicoController.getMedicos()
 GET     /medico/:id                  controllers.MedicoController.getMedico(id : Long)
 GET     /medico                      controllers.MedicoController.getMedicoByEmail(email : String)
 POST    /medico                      controllers.MedicoController.createMedico()
