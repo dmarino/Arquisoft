@@ -25,7 +25,6 @@ GET     /HospitalSantaFe/mediciones                 controllers.MedicionControll
 #paciente
 GET     /paciente                    controllers.PacienteController.getPacientes()
 GET     /paciente/:id                controllers.PacienteController.getPaciente(id : Long)
-GET     /pacienteSimple/:id          controllers.PacienteController.getPacienteSimple(id : Long)
 GET     /paciente/porNombre/:nombre  controllers.PacienteController.getPacienteByName(nombre : String)
 POST    /paciente                    controllers.PacienteController.createPaciente()
 DELETE  /paciente/:id                controllers.PacienteController.deletePaciente(id : Long)

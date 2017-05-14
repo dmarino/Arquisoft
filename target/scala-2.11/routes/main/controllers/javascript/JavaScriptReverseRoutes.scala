@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/PANA/Documents/arquisoft/proyecto/Arquisoft/conf/routes
-// @DATE:Fri May 12 20:17:33 COT 2017
+// @DATE:Sat May 13 19:36:54 COT 2017
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -47,7 +47,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:46
+    // @LINE:45
     def deleteMedicion: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MedicionController.deleteMedicion",
       """
@@ -57,7 +57,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:44
+    // @LINE:43
     def getByFechas: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MedicionController.getByFechas",
       """
@@ -67,7 +67,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:43
+    // @LINE:42
     def getMedicion: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MedicionController.getMedicion",
       """
@@ -87,7 +87,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:47
+    // @LINE:46
     def updateMedicion: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MedicionController.updateMedicion",
       """
@@ -97,7 +97,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:42
+    // @LINE:41
     def getMediciones: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MedicionController.getMediciones",
       """
@@ -137,7 +137,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:76
+    // @LINE:75
     def agregarConsejo: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PacienteController.agregarConsejo",
       """
@@ -157,7 +157,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:45
+    // @LINE:44
     def agregarMedicion: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PacienteController.agregarMedicion",
       """
@@ -167,7 +167,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:31
+    // @LINE:30
     def deletePaciente: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PacienteController.deletePaciente",
       """
@@ -177,17 +177,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:28
-    def getPacienteSimple: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.PacienteController.getPacienteSimple",
-      """
-        function(id0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "pacienteSimple/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id0)})
-        }
-      """
-    )
-  
-    // @LINE:32
+    // @LINE:31
     def updatePaciente: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PacienteController.updatePaciente",
       """
@@ -197,7 +187,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:29
+    // @LINE:28
     def getPacienteByName: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PacienteController.getPacienteByName",
       """
@@ -217,7 +207,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:56
+    // @LINE:55
     def asignarMedico: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PacienteController.asignarMedico",
       """
@@ -227,7 +217,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:30
+    // @LINE:29
     def createPaciente: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PacienteController.createPaciente",
       """
@@ -259,7 +249,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:59
+  // @LINE:58
   class ReverseUrgenciaController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -267,7 +257,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:63
+    // @LINE:62
     def updateUrgencia: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UrgenciaController.updateUrgencia",
       """
@@ -277,7 +267,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:60
+    // @LINE:59
     def getUrgencia: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UrgenciaController.getUrgencia",
       """
@@ -287,7 +277,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:59
+    // @LINE:58
     def getUrgencias: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UrgenciaController.getUrgencias",
       """
@@ -297,7 +287,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:62
+    // @LINE:61
     def deleteUrgencia: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UrgenciaController.deleteUrgencia",
       """
@@ -307,7 +297,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:61
+    // @LINE:60
     def createUrgencia: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UrgenciaController.createUrgencia",
       """
@@ -327,7 +317,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:68
+    // @LINE:67
     def loaderio: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.loaderio",
       """
@@ -337,7 +327,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:69
+    // @LINE:68
     def enviar: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.enviar",
       """
@@ -399,7 +389,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:35
+  // @LINE:34
   class ReverseSensorController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -407,7 +397,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:39
+    // @LINE:38
     def updateSensor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SensorController.updateSensor",
       """
@@ -417,7 +407,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:38
+    // @LINE:37
     def deleteSensor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SensorController.deleteSensor",
       """
@@ -427,7 +417,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:37
+    // @LINE:36
     def createSensor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SensorController.createSensor",
       """
@@ -437,7 +427,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:36
+    // @LINE:35
     def getSensor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SensorController.getSensor",
       """
@@ -447,7 +437,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:35
+    // @LINE:34
     def getSensores: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SensorController.getSensores",
       """
@@ -467,7 +457,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:77
+    // @LINE:76
     def deleteConsejo: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ConsejoController.deleteConsejo",
       """
@@ -477,7 +467,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:74
+    // @LINE:73
     def getConsejos: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ConsejoController.getConsejos",
       """
@@ -487,7 +477,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:78
+    // @LINE:77
     def updateConsejo: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ConsejoController.updateConsejo",
       """
@@ -507,7 +497,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:75
+    // @LINE:74
     def getConsejo: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ConsejoController.getConsejo",
       """
@@ -519,7 +509,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:71
+  // @LINE:70
   class ReverseHireFireController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -527,7 +517,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:71
+    // @LINE:70
     def recibir: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HireFireController.recibir",
       """
@@ -557,7 +547,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:51
+    // @LINE:50
     def getMedico: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MedicoController.getMedico",
       """
@@ -567,7 +557,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:50
+    // @LINE:49
     def getMedicos: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MedicoController.getMedicos",
       """
@@ -577,7 +567,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:52
+    // @LINE:51
     def getMedicoByEmail: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MedicoController.getMedicoByEmail",
       """
@@ -587,7 +577,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:55
+    // @LINE:54
     def updateMedico: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MedicoController.updateMedico",
       """
@@ -597,7 +587,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:53
+    // @LINE:52
     def createMedico: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MedicoController.createMedico",
       """
@@ -607,7 +597,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:54
+    // @LINE:53
     def deleteMedico: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MedicoController.deleteMedico",
       """

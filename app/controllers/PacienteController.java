@@ -62,22 +62,6 @@ public class PacienteController extends Controller {
                 );
     }
 
-    public CompletionStage<Result> getPacienteSimple(long id){
-        MessageDispatcher jdbcDispatcher = AkkaDispatcher.jdbcDispatcher;
-
-        return CompletableFuture.
-                supplyAsync(
-                        () -> {
-                            return Paciente.FINDER.byId(id);
-                        }
-                        ,jdbcDispatcher)
-                .thenApply(
-                        pacientes -> {
-                            return ok(toJson(pacientes.darPacienteSimple()));
-                        }
-                );
-    }
-
     public CompletionStage<Result> getPacienteByName(String name){
         MessageDispatcher jdbcDispatcher = AkkaDispatcher.jdbcDispatcher;
 
