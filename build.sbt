@@ -11,5 +11,6 @@ libraryDependencies ++= Seq(
   javaJdbc,
   cache,
   javaWs,
-  "org.postgresql" % "postgresql" % "9.4-1206-jdbc42"
+  "org.postgresql" % "postgresql" % "9.4-1206-jdbc42",
+  "be.objectify" %% "deadbolt-java" % "2.5.0"
 )

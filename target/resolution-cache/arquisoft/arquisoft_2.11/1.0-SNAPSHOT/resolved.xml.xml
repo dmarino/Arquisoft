@@ -4,7 +4,7 @@
 		module="arquisoft_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20170513191743"
+		publication="20170514123630"
 	>
 		<description>
 		arquisoft
@@ -48,5 +48,6 @@
 		<dependency org="com.typesafe.play" name="play-cache_2.11" rev="2.5.10" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-ws_2.11" rev="2.5.10" conf="compile->default(compile)"/>
 		<dependency org="org.postgresql" name="postgresql" rev="9.4-1206-jdbc42" conf="compile->default(compile)"/>
+		<dependency org="be.objectify" name="deadbolt-java_2.11" rev="2.5.0" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

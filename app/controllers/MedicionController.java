@@ -158,6 +158,6 @@ public class MedicionController extends Controller {
     }
 
     public Result detalle(Long id) {
-        return ok(views.html.login.render());
+        return ok(views.html.index.render(""));
     }
 }

@@ -29,33 +29,58 @@ class login extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Forma
       {
 
 
-Seq[Any](_display_(/*1.2*/main("Hospital Cardiologico de Santa Fe")/*1.43*/ {_display_(Seq[Any](format.raw/*1.45*/("""
+Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Cardiologico De Santa Fe</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
 
-"""),format.raw/*3.1*/("""<div class="container">
-
-    <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
+    <link rel="stylesheet" media="screen" href=""""),_display_(/*9.50*/routes/*9.56*/.Assets.versioned("stylesheets/bootstrap.min.css")),format.raw/*9.106*/("""">
+    <link rel="stylesheet" media="screen" href=""""),_display_(/*10.50*/routes/*10.56*/.Assets.versioned("stylesheets/bootstrap-responsive.css")),format.raw/*10.113*/("""">
+    <link rel="stylesheet" media="screen" href=""""),_display_(/*11.50*/routes/*11.56*/.Assets.versioned("stylesheets/font-awesome.min.css")),format.raw/*11.109*/("""">
+    <link rel="stylesheet" media="screen" href=""""),_display_(/*12.50*/routes/*12.56*/.Assets.versioned("stylesheets/custom.css")),format.raw/*12.99*/("""">
+</head>
+<body>
+<div id="wrapper">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href=""""),_display_(/*24.41*/routes/*24.47*/.HomeController.index()),format.raw/*24.70*/(""""><i class="fa fa-home"></i></a>
+                <div class="nav-collapse collapse">
+                    <div class="custom-navbar">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user-circle"></i><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li style="float: left"><a href=""""),_display_(/*31.71*/routes/*31.77*/.HomeController.perfil()),format.raw/*31.101*/(""""><i class="fa fa-info-circle"></i> Contactenos &emsp;</a></li>
+                                    <li style="float: left"><a href=""""),_display_(/*32.71*/routes/*32.77*/.HomeController.index()),format.raw/*32.100*/(""""><i class="fa fa-question-circle"></i> ayuda &emsp;</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!--/.nav-collapse -->
         </div>
-        <button class="btn btn-primary btn-block" type="submit">Sign in</button>
-    </form>
-
-</div> <!-- /container -->
-
-<footer class="footer">
-    <div class="container">
-        <p class="text-muted"> <a href=""""),_display_(/*23.42*/routes/*23.48*/.HomeController.index()),format.raw/*23.71*/("""">inicio</a> - login </p>
     </div>
-</footer>
 
-""")))}),format.raw/*27.2*/("""
+    <div class="box">
+
+    </div>
+
+</div>
+<!--java script -->
+<script  src=""""),_display_(/*48.16*/routes/*48.22*/.Assets.versioned("javascripts/jquery-1.9.1.min.js")),format.raw/*48.74*/(""""></script>
+
+
+</body>
+</html>
 """))
       }
     }
@@ -76,11 +101,11 @@ Seq[Any](_display_(/*1.2*/main("Hospital Cardiologico de Santa Fe")/*1.43*/ {_di
 object login extends login_Scope0.login
               /*
                   -- GENERATED --
-                  DATE: Thu May 11 00:35:28 COT 2017
+                  DATE: Sun May 14 10:43:23 COT 2017
                   SOURCE: C:/Users/PANA/Documents/arquisoft/proyecto/Arquisoft/app/views/login.scala.html
-                  HASH: 8487c244c9417429cc27fbec0f28f27dcc0d5c09
-                  MATRIX: 827->1|876->42|915->44|945->48|1837->913|1852->919|1896->942|1979->995
-                  LINES: 32->1|32->1|32->1|34->3|54->23|54->23|54->23|58->27
+                  HASH: e8839f8b32a99d144a98975ffb35754f59f91404
+                  MATRIX: 827->0|1164->311|1178->317|1249->367|1329->420|1344->426|1423->483|1503->536|1518->542|1593->595|1673->648|1688->654|1752->697|2288->1206|2303->1212|2347->1235|2908->1769|2923->1775|2969->1799|3131->1934|3146->1940|3191->1963|3593->2338|3608->2344|3681->2396
+                  LINES: 32->1|40->9|40->9|40->9|41->10|41->10|41->10|42->11|42->11|42->11|43->12|43->12|43->12|55->24|55->24|55->24|62->31|62->31|62->31|63->32|63->32|63->32|79->48|79->48|79->48
                   -- GENERATED --
               */
           

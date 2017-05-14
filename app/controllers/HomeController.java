@@ -1,8 +1,11 @@
 package controllers;
 
+import play.data.Form;
 import play.mvc.*;
 
 import views.html.*;
+
+import static play.data.Form.form;
 
 /**
  * This controller contains an action to handle HTTP requests
@@ -14,7 +17,7 @@ public class HomeController extends Controller {
         return ok("loaderio-6d160b83d57d4302825f8e2854f38ddc");
     }
 
-    public Result enviar(){
+    public Result enviar() {
         return ok("Enviando");
     }
 
@@ -24,17 +27,4 @@ public class HomeController extends Controller {
      * this method will be called when the application receives a
      * <code>GET</code> request with a path of <code>/</code>.
      */
-    public Result index() {
-        return ok(index.render("Hospital Cardiologico de Santa Fe"));
-    }
-
-    public Result login() {
-        return ok(login.render());
-    }
-
-    public Result perfil() {
-        return ok(login.render());
-    }
-
-
 }

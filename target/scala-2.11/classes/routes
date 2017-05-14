@@ -12,7 +12,6 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 #Interfaz
 GET     /HospitalSantaFe                            controllers.HomeController.index()
-GET     /HospitalSantaFe/login                      controllers.HomeController.login()
 GET     /HospitalSantaFe/perfil                     controllers.HomeController.perfil()
 GET     /HospitalSantaFe/pacientes                  controllers.PacienteController.lista()
 GET     /HospitalSantaFe/pacientes/:id              controllers.PacienteController.detalle(id : Long)
@@ -76,3 +75,4 @@ POST    /paciente/:id/consejo       controllers.PacienteController.agregarConsej
 DELETE  /consejo/:id                controllers.ConsejoController.deleteConsejo(id : Long)
 PUT     /consejo/:id                controllers.ConsejoController.updateConsejo(id : Long)
 
+#Seguridad

@@ -21,21 +21,19 @@ import play.data._
 import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 
-class index extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template1[String,play.twirl.api.HtmlFormat.Appendable] {
+class index extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template1[be.objectify.deadbolt.java.models.Subject,play.twirl.api.HtmlFormat.Appendable] {
 
-  /*
- * This template takes a single argument, a String containing a
- * message to display.
- */
-  def apply/*5.2*/(message: String):play.twirl.api.HtmlFormat.Appendable = {
+  /**/
+  def apply/*1.2*/(subject: be.objectify.deadbolt.java.models.Subject):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*5.19*/("""
+Seq[Any](format.raw/*1.54*/("""
+"""),format.raw/*5.4*/("""
 
 """),format.raw/*11.4*/("""
-"""),_display_(/*12.2*/main(message)/*12.15*/ {_display_(Seq[Any](format.raw/*12.17*/("""
+"""),_display_(/*12.2*/main("Hospital Santa Fe")/*12.27*/ {_display_(Seq[Any](format.raw/*12.29*/("""
 
 """),format.raw/*14.1*/("""<div class="container">
 
@@ -79,9 +77,9 @@ Seq[Any](format.raw/*5.19*/("""
     }
   }
 
-  def render(message:String): play.twirl.api.HtmlFormat.Appendable = apply(message)
+  def render(subject:be.objectify.deadbolt.java.models.Subject): play.twirl.api.HtmlFormat.Appendable = apply(subject)
 
-  def f:((String) => play.twirl.api.HtmlFormat.Appendable) = (message) => apply(message)
+  def f:((be.objectify.deadbolt.java.models.Subject) => play.twirl.api.HtmlFormat.Appendable) = (subject) => apply(subject)
 
   def ref: this.type = this
 
@@ -90,18 +88,15 @@ Seq[Any](format.raw/*5.19*/("""
 
 }
 
-/*
- * This template takes a single argument, a String containing a
- * message to display.
- */
+/**/
 object index extends index_Scope0.index
               /*
                   -- GENERATED --
-                  DATE: Thu May 11 00:35:28 COT 2017
+                  DATE: Sun May 14 12:40:06 COT 2017
                   SOURCE: C:/Users/PANA/Documents/arquisoft/proyecto/Arquisoft/app/views/index.scala.html
-                  HASH: 971f9b8e1367bd9358d717dab4304121818de488
-                  MATRIX: 837->99|949->116|980->318|1009->321|1031->334|1071->336|1102->340|2913->2121
-                  LINES: 30->5|35->5|37->11|38->12|38->12|38->12|40->14|76->50
+                  HASH: 53583052e1051027ae189433e4271e659f81cab1
+                  MATRIX: 780->1|927->53|955->151|986->353|1015->356|1049->381|1089->383|1120->387|2931->2168
+                  LINES: 27->1|32->1|33->5|35->11|36->12|36->12|36->12|38->14|74->50
                   -- GENERATED --
               */
           
