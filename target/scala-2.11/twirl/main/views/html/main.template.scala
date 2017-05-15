@@ -49,7 +49,7 @@ Seq[Any](format.raw/*1.33*/("""
     <div id="wrapper">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style=" background-color: rgb(0,0,0)">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style=" background-color: rgb(12,120,159)">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -70,12 +70,15 @@ Seq[Any](format.raw/*1.33*/("""
                         <i class="fa fa-user-circle fa-fw" style="color: #fff"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user"></i> Ver perfil</a>
+                        <li><a href=""""),_display_(/*42.39*/routes/*42.45*/.MedicoController.detalle(1L)),format.raw/*42.74*/(""""><i class="fa fa-user fa-fw"></i>Ver perfil</a>
                         </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Opciones</a>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i>Opciones</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="#"><i class="fa fa-question-circle fa-fw"></i>Ayuda</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href=""""),_display_(/*50.39*/routes/*50.45*/.HomeController.index()),format.raw/*50.68*/(""""><i class="fa fa-sign-out fa-fw"></i>Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -84,103 +87,41 @@ Seq[Any](format.raw/*1.33*/("""
             </ul>
             <!-- /.navbar-top-links -->
 
-            <div class="navbar-default sidebar" role="navigation">
+            <div class="navbar-default sidebar" role="navigation" style=" background-color: rgb(150,196,216)">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                            </div>
-                            <!-- /input-group -->
+                        <li>
+                            <a href=""""),_display_(/*63.39*/routes/*63.45*/.PacienteController.lista()),format.raw/*63.72*/("""" style="color: #fff"><i class="fa fa-male fa-fw"></i> Ver Listado de Pacientes</a>
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href=""""),_display_(/*66.39*/routes/*66.45*/.PacienteController.detalle(1L)),format.raw/*66.76*/("""" style="color: #fff"><i class="fa fa-search fa-fw"></i> Buscar Paciente</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <a href="tables.html" style="color: #fff"><i class="fa fa-bar-chart fa-fw"></i> Ver historial de mediciones</a>
+                        </li>
+                        <li>
+                            <a href="forms.html" style="color: #fff"><i class="fa fa-edit fa-fw"></i> Buscar Colegas</a>
+                        </li>
+                        <li>
+                            <a href="#" style="color: #fff"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Flot Charts</a>
+                                    <a href="panels-wells.html" style="color: #fff">Panels and Wells</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">Morris.js Charts</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
-                        </li>
-                        <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="panels-wells.html">Panels and Wells</a>
+                                    <a href="buttons.html" style="color: #fff">Buttons</a>
                                 </li>
                                 <li>
-                                    <a href="buttons.html">Buttons</a>
+                                    <a href="notifications.html" style="color: #fff">Notifications</a>
                                 </li>
                                 <li>
-                                    <a href="notifications.html">Notifications</a>
+                                    <a href="typography.html" style="color: #fff">Typography</a>
                                 </li>
                                 <li>
-                                    <a href="typography.html">Typography</a>
+                                    <a href="icons.html" style="color: #fff"> Icons</a>
                                 </li>
                                 <li>
-                                    <a href="icons.html"> Icons</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grid</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-third-level -->
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="blank.html">Blank Page</a>
-                                </li>
-                                <li>
-                                    <a href="login.html">Login Page</a>
+                                    <a href="grid.html" style="color: #fff">Grid</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -193,8 +134,8 @@ Seq[Any](format.raw/*1.33*/("""
         </nav>
 
         <div id="page-wrapper">
-            """),_display_(/*165.14*/content),format.raw/*165.21*/("""
-        """),format.raw/*166.9*/("""</div>
+            """),_display_(/*106.14*/content),format.raw/*106.21*/("""
+        """),format.raw/*107.9*/("""</div>
         <!-- /.row (nested) -->
     </div>
     <!-- /.panel-body -->
@@ -209,10 +150,10 @@ Seq[Any](format.raw/*1.33*/("""
 
     </div>
 <!--java script -->
-    <script  src=""""),_display_(/*181.20*/routes/*181.26*/.Assets.versioned("javascripts/jquery.min.js")),format.raw/*181.72*/(""""></script>
-    <script  src=""""),_display_(/*182.20*/routes/*182.26*/.Assets.versioned("javascripts/bootstrap2.min.js")),format.raw/*182.76*/("""" ></script>
-    <script  src=""""),_display_(/*183.20*/routes/*183.26*/.Assets.versioned("javascripts/metisMenu.min.js")),format.raw/*183.75*/("""" ></script>
-    <script  src=""""),_display_(/*184.20*/routes/*184.26*/.Assets.versioned("javascripts/sb-admin-2.js")),format.raw/*184.72*/("""" ></script>
+    <script  src=""""),_display_(/*122.20*/routes/*122.26*/.Assets.versioned("javascripts/jquery.min.js")),format.raw/*122.72*/(""""></script>
+    <script  src=""""),_display_(/*123.20*/routes/*123.26*/.Assets.versioned("javascripts/bootstrap2.min.js")),format.raw/*123.76*/("""" ></script>
+    <script  src=""""),_display_(/*124.20*/routes/*124.26*/.Assets.versioned("javascripts/metisMenu.min.js")),format.raw/*124.75*/("""" ></script>
+    <script  src=""""),_display_(/*125.20*/routes/*125.26*/.Assets.versioned("javascripts/sb-admin-2.js")),format.raw/*125.72*/("""" ></script>
     </body>
 </html>
 """))
@@ -235,11 +176,11 @@ Seq[Any](format.raw/*1.33*/("""
 object main extends main_Scope0.main
               /*
                   -- GENERATED --
-                  DATE: Sun May 14 16:02:50 COT 2017
+                  DATE: Sun May 14 21:28:10 COT 2017
                   SOURCE: C:/Users/PANA/Documents/arquisoft/proyecto/Arquisoft/app/views/main.scala.html
-                  HASH: 4b5c0a68697eb493dbe9311b974f6414bdac9e37
-                  MATRIX: 748->1|874->32|904->36|1250->355|1265->361|1338->412|1422->469|1437->475|1509->525|1593->582|1608->588|1683->641|1767->698|1782->704|1851->751|2558->1431|2573->1437|2617->1460|2852->1668|2879->1674|2925->1692|9588->8327|9617->8334|9655->8344|9962->8623|9978->8629|10046->8675|10106->8707|10122->8713|10194->8763|10255->8796|10271->8802|10342->8851|10403->8884|10419->8890|10487->8936
-                  LINES: 27->1|32->1|34->3|42->11|42->11|42->11|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|60->29|60->29|60->29|66->35|66->35|67->36|196->165|196->165|197->166|212->181|212->181|212->181|213->182|213->182|213->182|214->183|214->183|214->183|215->184|215->184|215->184
+                  HASH: a7c4f8ece8558203edadf8f19a5e793d7fe43342
+                  MATRIX: 748->1|874->32|904->36|1250->355|1265->361|1338->412|1422->469|1437->475|1509->525|1593->582|1608->588|1683->641|1767->698|1782->704|1851->751|2563->1436|2578->1442|2622->1465|2857->1673|2884->1679|2930->1697|3295->2035|3310->2041|3360->2070|3850->2533|3865->2539|3909->2562|4504->3130|4519->3136|4567->3163|4778->3347|4793->3353|4845->3384|6985->5496|7014->5503|7052->5513|7359->5792|7375->5798|7443->5844|7503->5876|7519->5882|7591->5932|7652->5965|7668->5971|7739->6020|7800->6053|7816->6059|7884->6105
+                  LINES: 27->1|32->1|34->3|42->11|42->11|42->11|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|60->29|60->29|60->29|66->35|66->35|67->36|73->42|73->42|73->42|81->50|81->50|81->50|94->63|94->63|94->63|97->66|97->66|97->66|137->106|137->106|138->107|153->122|153->122|153->122|154->123|154->123|154->123|155->124|155->124|155->124|156->125|156->125|156->125
                   -- GENERATED --
               */
           

@@ -1,25 +1,39 @@
-@(medico: Medico)
+@(medico: Medico)(nombre: String)
 
-@main("Hospital Cardiologico de Santa Fe") {
+@main(nombre) {
 <div class="container">
-    <div id="page-wrapper">
+    <p class="text-muted"> <a href="@routes.HomeController.index()">inicio</a> - perfil</p>
+</div>
 
-        <div class="container">
-            <h1>&nbsp;</h1>
-            <h1>&nbsp;</h1>
-            <h3 class="panel-title">@medico.getNombreMedico()</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3" align="center">
+            <img src="http://adagiohospice.com/secure/wp-content/uploads/2014/11/Nurse-Evaluation-270x250.png" />
         </div>
+        <div class="col-md-1">
 
-        <div class="row">
-            <div class="span3">
-                <img src="http://adagiohospice.com/secure/wp-content/uploads/2014/11/Nurse-Evaluation-270x250.png" />
-            </div>
-            <div class="span9">
-                <table class="table table-user-information">
+        </div>
+        <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading"></div>
+            <div class="panel-body">
+                <table class="table">
                     <tbody>
                     <tr>
                         <td>Id:</td>
                         <td>@medico.getIdMedico()</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre:</td>
+                        <td>@medico.getNombreMedico()</td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td>@medico.getEmail()</td>
+                    </tr>
+                    <tr>
+                        <td>Tipo:</td>
+                        <td>@medico.getTipo()</td>
                     </tr>
                     <tr>
                         <td>Especialidad:</td>
@@ -33,16 +47,10 @@
                 </table>
             </div>
         </div>
-
-        <div class="container">
-
+        </div>
+        <div class="col-md-2">
         </div>
     </div>
 </div>
 
-<footer class="footer">
-    <div class="container" align="center">
-        <p class="text-muted"> <a href="@routes.HomeController.index()">inicio</a> - <a href="@routes.MedicoController.lista()">medicos</a> - @medico.getNombreMedico()</p>
-    </div>
-</footer>
 }

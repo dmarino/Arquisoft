@@ -1,15 +1,10 @@
-body {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: rgb(255,255,255);
-  margin-bottom: 60px;
-}
+body {}
 .footer {
   position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 1rem;
-  background-color: #efefef;
+  background-color: rgb(255,255,255);
   text-align: center;
 }

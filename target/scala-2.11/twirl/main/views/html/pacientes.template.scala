@@ -21,15 +21,15 @@ import play.data._
 import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 
-class pacientes extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template1[List[Paciente],play.twirl.api.HtmlFormat.Appendable] {
+class pacientes extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template2[String,List[Paciente],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(pacientes: List[Paciente]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(nombre:String)(pacientes: List[Paciente]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.29*/("""
+Seq[Any](format.raw/*1.44*/("""
 
 """),_display_(/*3.2*/main("Hospital Cardiologico de Santa Fe")/*3.43*/ {_display_(Seq[Any](format.raw/*3.45*/("""
 
@@ -72,9 +72,9 @@ Seq[Any](format.raw/*1.29*/("""
     }
   }
 
-  def render(pacientes:List[Paciente]): play.twirl.api.HtmlFormat.Appendable = apply(pacientes)
+  def render(nombre:String,pacientes:List[Paciente]): play.twirl.api.HtmlFormat.Appendable = apply(nombre)(pacientes)
 
-  def f:((List[Paciente]) => play.twirl.api.HtmlFormat.Appendable) = (pacientes) => apply(pacientes)
+  def f:((String) => (List[Paciente]) => play.twirl.api.HtmlFormat.Appendable) = (nombre) => (pacientes) => apply(nombre)(pacientes)
 
   def ref: this.type = this
 
@@ -87,10 +87,10 @@ Seq[Any](format.raw/*1.29*/("""
 object pacientes extends pacientes_Scope0.pacientes
               /*
                   -- GENERATED --
-                  DATE: Thu May 11 00:35:28 COT 2017
+                  DATE: Sun May 14 21:43:51 COT 2017
                   SOURCE: C:/Users/PANA/Documents/arquisoft/proyecto/Arquisoft/app/views/pacientes.scala.html
-                  HASH: f7a0eabdca87b819aea1a0ac5af5c6b4c8b58cc1
-                  MATRIX: 761->1|883->28|913->33|962->74|1001->76|1031->80|1670->692|1712->718|1752->720|1810->750|1918->831|1935->839|1969->852|2000->855|2018->863|2055->878|2130->926|2147->934|2180->946|2282->1017|2340->1047|2634->1314|2649->1320|2693->1343|2779->1399
+                  HASH: 7e7a2d5984fc055f8696ad60c9d33c184c062c27
+                  MATRIX: 768->1|905->43|935->48|984->89|1023->91|1053->95|1692->707|1734->733|1774->735|1832->765|1940->846|1957->854|1991->867|2022->870|2040->878|2077->893|2152->941|2169->949|2202->961|2304->1032|2362->1062|2656->1329|2671->1335|2715->1358|2801->1414
                   LINES: 27->1|32->1|34->3|34->3|34->3|36->5|49->18|49->18|49->18|50->19|51->20|51->20|51->20|51->20|51->20|51->20|52->21|52->21|52->21|54->23|55->24|65->34|65->34|65->34|69->38
                   -- GENERATED --
               */

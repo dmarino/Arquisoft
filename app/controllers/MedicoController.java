@@ -279,6 +279,6 @@ public class MedicoController extends Controller
 
     public Result detalle(Long id) {
         Medico m = Medico.FINDER.byId(id);
-        return ok(views.html.medico.render(m));
+        return ok(views.html.medico.render(m, m.getNombreMedico()));
     }
 }

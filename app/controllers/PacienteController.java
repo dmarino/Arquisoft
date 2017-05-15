@@ -236,8 +236,9 @@ public class PacienteController extends Controller {
 
     public Result lista() {
 
+        Medico m = Medico.FINDER.byId(1L);
         List<Paciente> p= Paciente.FINDER.all();
-        return ok(views.html.pacientes.render(p));
+        return ok(views.html.pacientes.render(m.getNombreMedico(), p));
     }
 
     public Result detalle(Long id) {

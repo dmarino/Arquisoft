@@ -46,12 +46,19 @@ Seq[Any](format.raw/*1.1*/("""<html lang="en">
 
 </head>
 <body>
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style=" background-color: rgb(12,120,159)">
+    <div class="navbar-header">
+        <a class="navbar-brand" style="color: #fff">Hospital Santa Fe</a>
+    </div>
+</nav>
 <div class="container">
+    <h1 style="text-align: center">Bienvenido al hospital Cardiológico de Santa Fe</h1>
+    <h3 style="text-align: center">Para ingresar, por favor inicie sesión</h3>
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
             <div class="login-panel panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Please Sign In</h3>
+                    <h5>&emsp;</h5>
                 </div>
                 <div class="panel-body">
                     <form role="form">
@@ -68,7 +75,7 @@ Seq[Any](format.raw/*1.1*/("""<html lang="en">
                                 </label>
                             </div>
                             <!-- Change this to a button or input when using this as a form -->
-                            <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a>
+                            <a href=""""),_display_(/*47.39*/routes/*47.45*/.HomeController.index()),format.raw/*47.68*/("""" class="btn btn-lg btn-primary btn-block">Login</a>
                         </fieldset>
                     </form>
                 </div>
@@ -77,10 +84,10 @@ Seq[Any](format.raw/*1.1*/("""<html lang="en">
     </div>
 </div>
 <!-- /#wrapper -->
-<script  src=""""),_display_(/*49.16*/routes/*49.22*/.Assets.versioned("javascripts/jquery.min.js")),format.raw/*49.68*/(""""></script>
-<script  src=""""),_display_(/*50.16*/routes/*50.22*/.Assets.versioned("javascripts/bootstrap2.min.js")),format.raw/*50.72*/("""" ></script>
-<script  src=""""),_display_(/*51.16*/routes/*51.22*/.Assets.versioned("javascripts/metisMenu.min.js")),format.raw/*51.71*/("""" ></script>
-<script  src=""""),_display_(/*52.16*/routes/*52.22*/.Assets.versioned("javascripts/sb-admin-2.js")),format.raw/*52.68*/("""" ></script>
+<script  src=""""),_display_(/*56.16*/routes/*56.22*/.Assets.versioned("javascripts/jquery.min.js")),format.raw/*56.68*/(""""></script>
+<script  src=""""),_display_(/*57.16*/routes/*57.22*/.Assets.versioned("javascripts/bootstrap2.min.js")),format.raw/*57.72*/("""" ></script>
+<script  src=""""),_display_(/*58.16*/routes/*58.22*/.Assets.versioned("javascripts/metisMenu.min.js")),format.raw/*58.71*/("""" ></script>
+<script  src=""""),_display_(/*59.16*/routes/*59.22*/.Assets.versioned("javascripts/sb-admin-2.js")),format.raw/*59.68*/("""" ></script>
 </body>"""))
       }
     }
@@ -101,11 +108,11 @@ Seq[Any](format.raw/*1.1*/("""<html lang="en">
 object login extends login_Scope0.login
               /*
                   -- GENERATED --
-                  DATE: Sun May 14 15:10:58 COT 2017
+                  DATE: Sun May 14 18:44:42 COT 2017
                   SOURCE: C:/Users/PANA/Documents/arquisoft/proyecto/Arquisoft/app/views/login.scala.html
-                  HASH: d7d8be814f7407e13020a726ab7ebba926968a81
-                  MATRIX: 827->0|1200->346|1215->352|1288->403|1368->456|1383->462|1455->512|1535->565|1550->571|1625->624|1705->677|1720->683|1789->730|3329->2243|3344->2249|3411->2295|3466->2323|3481->2329|3552->2379|3608->2408|3623->2414|3693->2463|3749->2492|3764->2498|3831->2544
-                  LINES: 32->1|42->11|42->11|42->11|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|80->49|80->49|80->49|81->50|81->50|81->50|82->51|82->51|82->51|83->52|83->52|83->52
+                  HASH: c823dc22138a6578be1bc5404629313de4bd3fb7
+                  MATRIX: 827->0|1200->346|1215->352|1288->403|1368->456|1383->462|1455->512|1535->565|1550->571|1625->624|1705->677|1720->683|1789->730|3470->2384|3485->2390|3529->2413|3791->2648|3806->2654|3873->2700|3928->2728|3943->2734|4014->2784|4070->2813|4085->2819|4155->2868|4211->2897|4226->2903|4293->2949
+                  LINES: 32->1|42->11|42->11|42->11|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|78->47|78->47|78->47|87->56|87->56|87->56|88->57|88->57|88->57|89->58|89->58|89->58|90->59|90->59|90->59
                   -- GENERATED --
               */
           
