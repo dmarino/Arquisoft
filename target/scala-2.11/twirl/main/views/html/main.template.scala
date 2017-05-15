@@ -43,6 +43,7 @@ Seq[Any](format.raw/*1.33*/("""
         <link rel="stylesheet" media="screen" href=""""),_display_(/*12.54*/routes/*12.60*/.Assets.versioned("stylesheets/metisMenu.min.css")),format.raw/*12.110*/("""">
         <link rel="stylesheet" media="screen" href=""""),_display_(/*13.54*/routes/*13.60*/.Assets.versioned("stylesheets/font-awesome.min.css")),format.raw/*13.113*/("""">
         <link rel="stylesheet" media="screen" href=""""),_display_(/*14.54*/routes/*14.60*/.Assets.versioned("stylesheets/sb-admin-2.css")),format.raw/*14.107*/("""">
+        <link rel="stylesheet" media="screen" href=""""),_display_(/*15.54*/routes/*15.60*/.Assets.versioned("stylesheets/morris.css")),format.raw/*15.103*/("""">
 
     </head>
     <body>
@@ -57,20 +58,32 @@ Seq[Any](format.raw/*1.33*/("""
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" style="color: #fff" href=""""),_display_(/*29.68*/routes/*29.74*/.HomeController.index()),format.raw/*29.97*/("""">Hospital Santa Fe</a>
+                <a class="navbar-brand" style="color: #fff" href=""""),_display_(/*30.68*/routes/*30.74*/.HomeController.index()),format.raw/*30.97*/("""">Hospital Santa Fe</a>
             </div>
             <!-- /.navbar-header -->
-
+            <ul class="nav navbar-top-links navbar-left">
+                <li>
+                    <a href=""""),_display_(/*35.31*/routes/*35.37*/.PacienteController.lista()),format.raw/*35.64*/("""" style="color: #fff">Pacientes</a>
+                </li>
+                <li>
+                    <a href=""""),_display_(/*38.31*/routes/*38.37*/.MedicionController.lista()),format.raw/*38.64*/("""" style="color: #fff">Hospital</a>
+                </li>
+                <li>
+                    <a href=""""),_display_(/*41.31*/routes/*41.37*/.MedicoController.lista()),format.raw/*41.62*/("""" style="color: #fff">Medicos</a>
+                </li>
+            </ul>
             <ul class="nav navbar-top-links navbar-right">
                 <li style="color: #fff">
-                    """),_display_(/*35.22*/nombre),format.raw/*35.28*/("""
-                """),format.raw/*36.17*/("""</li>
+                    """),_display_(/*46.22*/nombre),format.raw/*46.28*/("""
+                """),format.raw/*47.17*/("""</li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user-circle fa-fw" style="color: #fff"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href=""""),_display_(/*42.39*/routes/*42.45*/.MedicoController.detalle(1L)),format.raw/*42.74*/(""""><i class="fa fa-user fa-fw"></i>Ver perfil</a>
+                        <li><a href=""""),_display_(/*53.39*/routes/*53.45*/.MedicoController.detalle(1L)),format.raw/*53.74*/(""""><i class="fa fa-user fa-fw"></i>Ver perfil</a>
+                        </li>
+                        <li><a href=""""),_display_(/*55.39*/routes/*55.45*/.MedicoController.detalle(1L)),format.raw/*55.74*/(""""><i class="fa fa-bell fa-fw"></i> Notificaciones<i class="fa fa-exclamation-circle fa-fw"></i></a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i>Opciones</a>
                         </li>
@@ -78,7 +91,7 @@ Seq[Any](format.raw/*1.33*/("""
                         <li><a href="#"><i class="fa fa-question-circle fa-fw"></i>Ayuda</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href=""""),_display_(/*50.39*/routes/*50.45*/.HomeController.index()),format.raw/*50.68*/(""""><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                        <li><a href=""""),_display_(/*63.39*/routes/*63.45*/.HomeController.login()),format.raw/*63.68*/(""""><i class="fa fa-sign-out fa-fw"></i>Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -86,57 +99,8 @@ Seq[Any](format.raw/*1.33*/("""
                 <!-- /.dropdown -->
             </ul>
             <!-- /.navbar-top-links -->
-
-            <div class="navbar-default sidebar" role="navigation" style=" background-color: rgb(150,196,216)">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li>
-                            <a href=""""),_display_(/*63.39*/routes/*63.45*/.PacienteController.lista()),format.raw/*63.72*/("""" style="color: #fff"><i class="fa fa-male fa-fw"></i> Ver Listado de Pacientes</a>
-                        </li>
-                        <li>
-                            <a href=""""),_display_(/*66.39*/routes/*66.45*/.PacienteController.detalle(1L)),format.raw/*66.76*/("""" style="color: #fff"><i class="fa fa-search fa-fw"></i> Buscar Paciente</a>
-                        </li>
-                        <li>
-                            <a href="tables.html" style="color: #fff"><i class="fa fa-bar-chart fa-fw"></i> Ver historial de mediciones</a>
-                        </li>
-                        <li>
-                            <a href="forms.html" style="color: #fff"><i class="fa fa-edit fa-fw"></i> Buscar Colegas</a>
-                        </li>
-                        <li>
-                            <a href="#" style="color: #fff"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="panels-wells.html" style="color: #fff">Panels and Wells</a>
-                                </li>
-                                <li>
-                                    <a href="buttons.html" style="color: #fff">Buttons</a>
-                                </li>
-                                <li>
-                                    <a href="notifications.html" style="color: #fff">Notifications</a>
-                                </li>
-                                <li>
-                                    <a href="typography.html" style="color: #fff">Typography</a>
-                                </li>
-                                <li>
-                                    <a href="icons.html" style="color: #fff"> Icons</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html" style="color: #fff">Grid</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
-
-        <div id="page-wrapper">
-            """),_display_(/*106.14*/content),format.raw/*106.21*/("""
-        """),format.raw/*107.9*/("""</div>
-        <!-- /.row (nested) -->
+            """),_display_(/*71.14*/content),format.raw/*71.21*/("""
+        """),format.raw/*72.9*/("""<!-- /.row (nested) -->
     </div>
     <!-- /.panel-body -->
     </div>
@@ -150,10 +114,13 @@ Seq[Any](format.raw/*1.33*/("""
 
     </div>
 <!--java script -->
-    <script  src=""""),_display_(/*122.20*/routes/*122.26*/.Assets.versioned("javascripts/jquery.min.js")),format.raw/*122.72*/(""""></script>
-    <script  src=""""),_display_(/*123.20*/routes/*123.26*/.Assets.versioned("javascripts/bootstrap2.min.js")),format.raw/*123.76*/("""" ></script>
-    <script  src=""""),_display_(/*124.20*/routes/*124.26*/.Assets.versioned("javascripts/metisMenu.min.js")),format.raw/*124.75*/("""" ></script>
-    <script  src=""""),_display_(/*125.20*/routes/*125.26*/.Assets.versioned("javascripts/sb-admin-2.js")),format.raw/*125.72*/("""" ></script>
+    <script  src=""""),_display_(/*86.20*/routes/*86.26*/.Assets.versioned("javascripts/jquery.min.js")),format.raw/*86.72*/(""""></script>
+    <script  src=""""),_display_(/*87.20*/routes/*87.26*/.Assets.versioned("javascripts/bootstrap2.min.js")),format.raw/*87.76*/("""" ></script>
+    <script  src=""""),_display_(/*88.20*/routes/*88.26*/.Assets.versioned("javascripts/metisMenu.min.js")),format.raw/*88.75*/("""" ></script>
+    <script  src=""""),_display_(/*89.20*/routes/*89.26*/.Assets.versioned("javascripts/raphael.min.js")),format.raw/*89.73*/("""" ></script>
+    <script  src=""""),_display_(/*90.20*/routes/*90.26*/.Assets.versioned("javascripts/morris.min.js")),format.raw/*90.72*/("""" ></script>
+    <script  src=""""),_display_(/*91.20*/routes/*91.26*/.Assets.versioned("javascripts/morris-data.js")),format.raw/*91.73*/("""" ></script>
+    <script  src=""""),_display_(/*92.20*/routes/*92.26*/.Assets.versioned("javascripts/sb-admin-2.js")),format.raw/*92.72*/("""" ></script>
     </body>
 </html>
 """))
@@ -176,11 +143,11 @@ Seq[Any](format.raw/*1.33*/("""
 object main extends main_Scope0.main
               /*
                   -- GENERATED --
-                  DATE: Sun May 14 21:28:10 COT 2017
+                  DATE: Mon May 15 06:58:55 COT 2017
                   SOURCE: C:/Users/PANA/Documents/arquisoft/proyecto/Arquisoft/app/views/main.scala.html
-                  HASH: a7c4f8ece8558203edadf8f19a5e793d7fe43342
-                  MATRIX: 748->1|874->32|904->36|1250->355|1265->361|1338->412|1422->469|1437->475|1509->525|1593->582|1608->588|1683->641|1767->698|1782->704|1851->751|2563->1436|2578->1442|2622->1465|2857->1673|2884->1679|2930->1697|3295->2035|3310->2041|3360->2070|3850->2533|3865->2539|3909->2562|4504->3130|4519->3136|4567->3163|4778->3347|4793->3353|4845->3384|6985->5496|7014->5503|7052->5513|7359->5792|7375->5798|7443->5844|7503->5876|7519->5882|7591->5932|7652->5965|7668->5971|7739->6020|7800->6053|7816->6059|7884->6105
-                  LINES: 27->1|32->1|34->3|42->11|42->11|42->11|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|60->29|60->29|60->29|66->35|66->35|67->36|73->42|73->42|73->42|81->50|81->50|81->50|94->63|94->63|94->63|97->66|97->66|97->66|137->106|137->106|138->107|153->122|153->122|153->122|154->123|154->123|154->123|155->124|155->124|155->124|156->125|156->125|156->125
+                  HASH: cb294ca96c362ebecddd050a882e5d38bba72439
+                  MATRIX: 748->1|874->32|904->36|1250->355|1265->361|1338->412|1422->469|1437->475|1509->525|1593->582|1608->588|1683->641|1767->698|1782->704|1851->751|1935->808|1950->814|2015->857|2727->1542|2742->1548|2786->1571|3007->1765|3022->1771|3070->1798|3209->1910|3224->1916|3272->1943|3410->2054|3425->2060|3471->2085|3698->2285|3725->2291|3771->2309|4136->2647|4151->2653|4201->2682|4347->2801|4362->2807|4412->2836|4953->3350|4968->3356|5012->3379|5326->3666|5354->3673|5391->3683|5681->3946|5696->3952|5763->3998|5822->4030|5837->4036|5908->4086|5968->4119|5983->4125|6053->4174|6113->4207|6128->4213|6196->4260|6256->4293|6271->4299|6338->4345|6398->4378|6413->4384|6481->4431|6541->4464|6556->4470|6623->4516
+                  LINES: 27->1|32->1|34->3|42->11|42->11|42->11|43->12|43->12|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|61->30|61->30|61->30|66->35|66->35|66->35|69->38|69->38|69->38|72->41|72->41|72->41|77->46|77->46|78->47|84->53|84->53|84->53|86->55|86->55|86->55|94->63|94->63|94->63|102->71|102->71|103->72|117->86|117->86|117->86|118->87|118->87|118->87|119->88|119->88|119->88|120->89|120->89|120->89|121->90|121->90|121->90|122->91|122->91|122->91|123->92|123->92|123->92
                   -- GENERATED --
               */
           

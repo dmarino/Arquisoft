@@ -1,46 +1,54 @@
-@(medicos: List[Medico])
+@(nombre: String)(medicos: List[Medico])
 
-@main("Hospital Cardiologico de Santa Fe") {
-
-<div class="container">
-    <div id="page-wrapper">
-        <h1>&nbsp;</h1>
-        @for(medico <- medicos) {
-        <div class="container">
-            <h3 class="panel-title">@medico.getNombreMedico()</h3>
-        </div>
-
-        <div class="row">
-            <div class="span3">
-                <img src="http://adagiohospice.com/secure/wp-content/uploads/2014/11/Nurse-Evaluation-270x250.png" />
-            </div>
-            <div class="span9">
-                <table class="table table-user-information">
-                    <tbody>
-                    <tr>
-                        <td>Id:</td>
-                        <td>@medico.getIdMedico()</td>
-                    </tr>
-                    <tr>
-                        <td>Especialidad:</td>
-                        <td>@medico.getEspecialidadMedico()</td>
-                    </tr>
-                    <tr>
-                        <td>Descripcion:</td>
-                        <td>@medico.getDescripcionMedico()</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        }
+@main("nombre") {
+<div class="navbar-default sidebar" role="navigation" style=" background-color: rgb(150,196,216)">
+    <div class="sidebar-nav navbar-collapse">
+        <ul class="nav" id="side-menu">
+            <li>
+                <a href="@routes.MedicoController.lista()" style="color: #fff"><i class="fa fa-male fa-fw"></i> Ver Listado de Medicos</a>
+            </li>
+            <li>
+                <a href="@routes.MedicoController.detalle(1L)" style="color: #fff"><i class="fa fa-search fa-fw"></i> Buscar Medico <span class="fa arrow"></span> </a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="#" style="color: #fff">Buscar medico por nombre</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: #fff">Buscar medico por documento</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: #fff">Buscar medico por correo electronico</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
     </div>
+    <!-- /.sidebar-collapse -->
 </div>
+<!-- /.navbar-static-side -->
+</nav>
 
-<footer class="footer">
-    <div class="container" align="center">
-        <p class="text-muted"> <a href="@routes.HomeController.index()">inicio</a> - medicos</p>
+<div id="page-wrapper">
+    <div class="container">
+        <p class="text-muted"> <a href="@routes.HomeController.index()">inicio</a> - pacientes</p>
     </div>
-</footer>
-
+    <div class="container">
+        <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+            <thead>
+            <tr>
+                <th>Documento</th>
+                <th>Nombre</th>
+            </tr>
+            </thead>
+            <tbody>
+            @for(medico <- medicos) {
+            <tr>
+                <td><a href="../HospitalSantaFe/medicos/@medico.getIdMedico">@medico.getIdMedico()</a></td>
+                <td>@medico.getNombreMedico()</td>
+            </tr>
+            }
+            </tbody>
+        </table>
+    </div> <!-- /container -->
+</div>
 }

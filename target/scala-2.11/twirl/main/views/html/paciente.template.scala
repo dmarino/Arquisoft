@@ -21,127 +21,119 @@ import play.data._
 import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 
-class paciente extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template1[Paciente,play.twirl.api.HtmlFormat.Appendable] {
+class paciente extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template2[String,Paciente,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(paciente: Paciente):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(nombre: String)(paciente: Paciente):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.22*/("""
+Seq[Any](format.raw/*1.38*/("""
 
-"""),_display_(/*3.2*/main("Hospital Cardiologico de Santa Fe")/*3.43*/ {_display_(Seq[Any](format.raw/*3.45*/("""
-"""),format.raw/*4.1*/("""<div class="container-fluid">
-    <div id="page-wrapper">
-        <div class="container">
-            <h1>&nbsp;</h1>
-            <h2 class="panel-title">"""),_display_(/*8.38*/paciente/*8.46*/.getNombre()),format.raw/*8.58*/("""</h2>
-        </div>
+"""),_display_(/*3.2*/main(nombre)/*3.14*/ {_display_(Seq[Any](format.raw/*3.16*/("""
 
-        <div class="row">
-            <div class="span3">
-                <ul id="sidebar" class="nav nav-stacked affix">
-                    <li><a href="#">Dar un consejo</a></li>
-                    <li><a href="#">Editar Informacion</a></li>
-                    <li><a href="#">Cambiar Marcapasos</a></li>
-                    <li><a href="#">Mediciones Historicas</a></li>
-                </ul>
-            </div>
-            <div class="span3">
-                <img src="http://www.zenithholidays.com/img/icon4.png" />
-            </div>
-            <div class="span6">
-                <table class="table table-user-information">
-                    <tbody>
-                    <tr>
-                        <td>Documento:</td>
-                        <td>"""),_display_(/*28.30*/paciente/*28.38*/.getDocumento()),format.raw/*28.53*/("""</td>
-                    </tr>
-                    <tr>
-                        <td>pais:</td>
-                        <td>"""),_display_(/*32.30*/paciente/*32.38*/.getPais()),format.raw/*32.48*/("""</td>
-                    </tr>
-                    <tr>
-                        <td>Ciudad:</td>
-                        <td>"""),_display_(/*36.30*/paciente/*36.38*/.getCiudad()),format.raw/*36.50*/("""</td>
-                    </tr>
-
-                    <tr>
-                    <tr>
-                        <td>Telefono:</td>
-                        <td>"""),_display_(/*42.30*/paciente/*42.38*/.getTelefono()),format.raw/*42.52*/("""</td>
-                    </tr>
-                    <tr>
-                        <td>Tipo Sangre:</td>
-                        <td>"""),_display_(/*46.30*/paciente/*46.38*/.getTipoSangre()),format.raw/*46.54*/("""</td>
-                    </tr>
-                    <tr>
-                        <td>Tratamientos:</td>
-                        <td>"""),_display_(/*50.30*/paciente/*50.38*/.getTratamientos()),format.raw/*50.56*/("""</td>
-
-                    </tr>
-                    <tr>
-                        <td>Examenes:</td>
-                        <td>"""),_display_(/*55.30*/paciente/*55.38*/.getExamenes()),format.raw/*55.52*/("""</td>
-
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="container">
-            <h3 class="panel-title">Mediciones</h3>
-        </div>
-
-        <div class="row">
-            <div class="span2">
-            </div>
-            <div class="span10">
-                <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                    <thead>
-                    <tr>
-                        <th>Referencia</th>
-                        <th>Fecha</th>
-                        <th>Frecuencia Cardiaca</th>
-                        <th>Presion</th>
-                        <th>Estres</th>
-                        <th>Estado</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    """),_display_(/*83.22*/for(medicion <- paciente.getMedicionesHistoricas()) yield /*83.73*/ {_display_(Seq[Any](format.raw/*83.75*/("""
-                    """),format.raw/*84.21*/("""<tr>
-                        <td>"""),_display_(/*85.30*/medicion/*85.38*/.getReferencia()),format.raw/*85.54*/("""</td>
-                        <td>"""),_display_(/*86.30*/medicion/*86.38*/.getFecha().getTime()),format.raw/*86.59*/("""</td>
-                        <td>"""),_display_(/*87.30*/medicion/*87.38*/.getFrecuencia()),format.raw/*87.54*/("""</td>
-                        <td>"""),_display_(/*88.30*/medicion/*88.38*/.getPresion()),format.raw/*88.51*/("""</td>
-                        <td>"""),_display_(/*89.30*/medicion/*89.38*/.getEstres()),format.raw/*89.50*/("""</td>
-                        <td>"""),_display_(/*90.30*/medicion/*90.38*/.getEstado()),format.raw/*90.50*/("""</td>
-                    </tr>
-                    """)))}),format.raw/*92.22*/("""
-                    """),format.raw/*93.21*/("""</tbody>
-                </table>
-            </div>
-        </div>
+"""),format.raw/*5.1*/("""<div class="navbar-default sidebar" role="navigation" style=" background-color: rgb(150,196,216)">
+    <div class="sidebar-nav navbar-collapse">
+        <ul class="nav" id="side-menu">
+            <li>
+                <a href="#" style="color: #fff"><i class="fa fa-id-card fa-fw"></i> Ver informacion personal</a>
+            </li>
+            <li>
+                <a href="#" style="color: #fff"><i class="fa fa-search fa-fw"></i> ver ultima medicion</a>
+            </li>
+            <li>
+                <a href=""""),_display_(/*15.27*/routes/*15.33*/.PacienteController.detalleMediciones(1L)),format.raw/*15.74*/("""" style="color: #fff"><i class="fa fa-search fa-fw"></i> ver historial de mediciones</a>
+            </li>
+            <li>
+                <a href="#" style="color: #fff"><i class="fa fa-search fa-fw"></i> ver consejos</a>
+            </li>
+        </ul>
     </div>
+    <!-- /.sidebar-collapse -->
 </div>
+<!-- /.navbar-static-side -->
+</nav>
 
-<footer class="footer">
-    <div class="container" align="center">
-        <p class="text-muted"> <a href=""""),_display_(/*102.42*/routes/*102.48*/.HomeController.index()),format.raw/*102.71*/("""">inicio</a> - <a href=""""),_display_(/*102.96*/routes/*102.102*/.PacienteController.lista()),format.raw/*102.129*/("""">pacientes</a> - """),_display_(/*102.148*/paciente/*102.156*/.getNombre()),format.raw/*102.168*/("""</p>
+<div id="page-wrapper">
+    <div class="container">
+        <p class="text-muted"> <a href=""""),_display_(/*29.42*/routes/*29.48*/.HomeController.index()),format.raw/*29.71*/("""">inicio</a> - <a href=""""),_display_(/*29.96*/routes/*29.102*/.PacienteController.lista()),format.raw/*29.129*/("""">pacientes</a> - perfil</p>
     </div>
-</footer>
-""")))}),format.raw/*105.2*/("""
+
+    <h2>"""),_display_(/*32.10*/paciente/*32.18*/.getNombre()),format.raw/*32.30*/("""</h2>
+
+    <div class="container" align="right">
+            <a class="btn btn-primary"> Aconsejar</a>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3" align="center">
+            <img src="http://i1.wp.com/www.cheerforacure.org/assets/images/icon-user-3.png" class="img-circle" alt="Cinque Terre" width="250" height="250">
+        </div>
+        <div class="col-md-9">
+            <div class="panel default-panel">
+                <div class="panel-heading">
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <td>Documento:</td>
+                            <td>"""),_display_(/*51.34*/paciente/*51.42*/.getDocumento()),format.raw/*51.57*/("""</td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td>"""),_display_(/*55.34*/paciente/*55.42*/.getEmail()),format.raw/*55.53*/("""</td>
+                        </tr>
+                        <tr>
+                            <td>pais:</td>
+                            <td>"""),_display_(/*59.34*/paciente/*59.42*/.getPais()),format.raw/*59.52*/("""</td>
+                        </tr>
+                        <tr>
+                            <td>Ciudad:</td>
+                            <td>"""),_display_(/*63.34*/paciente/*63.42*/.getCiudad()),format.raw/*63.54*/("""</td>
+                        </tr>
+
+                        <tr>
+                        <tr>
+                            <td>Telefono:</td>
+                            <td>"""),_display_(/*69.34*/paciente/*69.42*/.getTelefono()),format.raw/*69.56*/("""</td>
+                        </tr>
+                        <tr>
+                            <td>Tipo Sangre:</td>
+                            <td>"""),_display_(/*73.34*/paciente/*73.42*/.getTipoSangre()),format.raw/*73.58*/("""</td>
+                        </tr>
+                        <tr>
+                            <td>Marcapasos:</td>
+                            <td>"""),_display_(/*77.34*/paciente/*77.42*/.getMarcapasos()),format.raw/*77.58*/("""</td>
+                        </tr>
+                        <tr>
+                            <td>Tratamientos:</td>
+                            <td>"""),_display_(/*81.34*/paciente/*81.42*/.getTratamientos()),format.raw/*81.60*/("""</td>
+
+                        </tr>
+                        <tr>
+                            <td>Examenes:</td>
+                            <td>"""),_display_(/*86.34*/paciente/*86.42*/.getExamenes()),format.raw/*86.56*/("""</td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+""")))}),format.raw/*97.2*/("""
 """))
       }
     }
   }
 
-  def render(paciente:Paciente): play.twirl.api.HtmlFormat.Appendable = apply(paciente)
+  def render(nombre:String,paciente:Paciente): play.twirl.api.HtmlFormat.Appendable = apply(nombre)(paciente)
 
-  def f:((Paciente) => play.twirl.api.HtmlFormat.Appendable) = (paciente) => apply(paciente)
+  def f:((String) => (Paciente) => play.twirl.api.HtmlFormat.Appendable) = (nombre) => (paciente) => apply(nombre)(paciente)
 
   def ref: this.type = this
 
@@ -154,11 +146,11 @@ Seq[Any](format.raw/*1.22*/("""
 object paciente extends paciente_Scope0.paciente
               /*
                   -- GENERATED --
-                  DATE: Sun May 14 21:41:07 COT 2017
+                  DATE: Mon May 15 08:22:32 COT 2017
                   SOURCE: C:/Users/PANA/Documents/arquisoft/proyecto/Arquisoft/app/views/paciente.scala.html
-                  HASH: 15aa5e6b23c4dfa2f7dc19834f5d67c5e7db7ced
-                  MATRIX: 753->1|868->21|898->26|947->67|986->69|1014->71|1199->230|1215->238|1247->250|2078->1054|2095->1062|2131->1077|2287->1206|2304->1214|2335->1224|2493->1355|2510->1363|2543->1375|2731->1536|2748->1544|2783->1558|2946->1694|2963->1702|3000->1718|3164->1855|3181->1863|3220->1881|3382->2016|3399->2024|3434->2038|4351->2928|4418->2979|4458->2981|4508->3003|4570->3038|4587->3046|4624->3062|4687->3098|4704->3106|4746->3127|4809->3163|4826->3171|4863->3187|4926->3223|4943->3231|4977->3244|5040->3280|5057->3288|5090->3300|5153->3336|5170->3344|5203->3356|5289->3411|5339->3433|5571->3637|5587->3643|5632->3666|5685->3691|5702->3697|5752->3724|5800->3743|5819->3751|5854->3763|5915->3793
-                  LINES: 27->1|32->1|34->3|34->3|34->3|35->4|39->8|39->8|39->8|59->28|59->28|59->28|63->32|63->32|63->32|67->36|67->36|67->36|73->42|73->42|73->42|77->46|77->46|77->46|81->50|81->50|81->50|86->55|86->55|86->55|114->83|114->83|114->83|115->84|116->85|116->85|116->85|117->86|117->86|117->86|118->87|118->87|118->87|119->88|119->88|119->88|120->89|120->89|120->89|121->90|121->90|121->90|123->92|124->93|133->102|133->102|133->102|133->102|133->102|133->102|133->102|133->102|133->102|136->105
+                  HASH: a952e108ea1815f2884dabe070c271a3456d376f
+                  MATRIX: 760->1|891->37|921->42|941->54|980->56|1010->60|1565->588|1580->594|1642->635|2120->1086|2135->1092|2179->1115|2231->1140|2247->1146|2296->1173|2376->1226|2393->1234|2426->1246|3195->1988|3212->1996|3248->2011|3421->2157|3438->2165|3470->2176|3642->2321|3659->2329|3690->2339|3864->2486|3881->2494|3914->2506|4122->2687|4139->2695|4174->2709|4353->2861|4370->2869|4407->2885|4585->3036|4602->3044|4639->3060|4819->3213|4836->3221|4875->3239|5053->3390|5070->3398|5105->3412|5322->3599
+                  LINES: 27->1|32->1|34->3|34->3|34->3|36->5|46->15|46->15|46->15|60->29|60->29|60->29|60->29|60->29|60->29|63->32|63->32|63->32|82->51|82->51|82->51|86->55|86->55|86->55|90->59|90->59|90->59|94->63|94->63|94->63|100->69|100->69|100->69|104->73|104->73|104->73|108->77|108->77|108->77|112->81|112->81|112->81|117->86|117->86|117->86|128->97
                   -- GENERATED --
               */
           

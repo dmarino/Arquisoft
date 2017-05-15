@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/PANA/Documents/arquisoft/proyecto/Arquisoft/conf/routes
-// @DATE:Sun May 14 14:16:00 COT 2017
+// @DATE:Mon May 15 07:53:49 COT 2017
 
 package controllers;
 

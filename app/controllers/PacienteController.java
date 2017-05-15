@@ -242,9 +242,15 @@ public class PacienteController extends Controller {
     }
 
     public Result detalle(Long id) {
+        Medico m = Medico.FINDER.byId(1L);
         Paciente p = Paciente.FINDER.byId(id);
-        return ok(views.html.paciente.render(p));
+        return ok(views.html.paciente.render(m.getNombreMedico(),p));
     }
 
+    public Result detalleMediciones(Long id) {
+        Medico m = Medico.FINDER.byId(1L);
+        Paciente p = Paciente.FINDER.byId(id);
+        return ok(views.html.pacienteMedicion.render(m.getNombreMedico(),p));
+    }
 }
 

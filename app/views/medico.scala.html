@@ -1,54 +1,76 @@
 @(medico: Medico)(nombre: String)
 
 @main(nombre) {
-<div class="container">
-    <p class="text-muted"> <a href="@routes.HomeController.index()">inicio</a> - perfil</p>
+
+<div class="navbar-default sidebar" role="navigation" style=" background-color: rgb(150,196,216)">
+    <div class="sidebar-nav navbar-collapse">
+        <ul class="nav" id="side-menu">
+            <li>
+                <a href="#" style="color: #fff"> Editar Informacion personal</a>
+            </li>
+            <li>
+                <a href="#" style="color: #fff"> Ver Historial de Pacientes atendidos</a>
+            </li>
+            <li>
+                <a href="#" style="color: #fff"> Ver Historial de comentarios realizados</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /.sidebar-collapse -->
 </div>
+<!-- /.navbar-static-side -->
+</nav>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-3" align="center">
-            <img src="http://adagiohospice.com/secure/wp-content/uploads/2014/11/Nurse-Evaluation-270x250.png" />
-        </div>
-        <div class="col-md-1">
+<div id="page-wrapper">
+    <div class="container">
+        <p class="text-muted"> <a href="@routes.HomeController.index()">inicio</a> - perfil</p>
+    </div>
 
-        </div>
-        <div class="col-md-6">
-        <div class="panel panel-primary">
-            <div class="panel-heading"></div>
-            <div class="panel-body">
-                <table class="table">
-                    <tbody>
-                    <tr>
-                        <td>Id:</td>
-                        <td>@medico.getIdMedico()</td>
-                    </tr>
-                    <tr>
-                        <td>Nombre:</td>
-                        <td>@medico.getNombreMedico()</td>
-                    </tr>
-                    <tr>
-                        <td>Email:</td>
-                        <td>@medico.getEmail()</td>
-                    </tr>
-                    <tr>
-                        <td>Tipo:</td>
-                        <td>@medico.getTipo()</td>
-                    </tr>
-                    <tr>
-                        <td>Especialidad:</td>
-                        <td>@medico.getEspecialidadMedico()</td>
-                    </tr>
-                    <tr>
-                        <td>Descripcion:</td>
-                        <td>@medico.getDescripcionMedico()</td>
-                    </tr>
-                    </tbody>
-                </table>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3" align="center">
+                <img src="http://adagiohospice.com/secure/wp-content/uploads/2014/11/Nurse-Evaluation-270x250.png" />
             </div>
-        </div>
-        </div>
-        <div class="col-md-2">
+            <div class="col-md-1">
+
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"></div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <tbody>
+                            <tr>
+                                <td>Id:</td>
+                                <td>@medico.getIdMedico()</td>
+                            </tr>
+                            <tr>
+                                <td>Nombre:</td>
+                                <td>@medico.getNombreMedico()</td>
+                            </tr>
+                            <tr>
+                                <td>Email:</td>
+                                <td>@medico.getEmail()</td>
+                            </tr>
+                            <tr>
+                                <td>Tipo:</td>
+                                <td>@medico.getTipo()</td>
+                            </tr>
+                            <tr>
+                                <td>Especialidad:</td>
+                                <td>@medico.getEspecialidadMedico()</td>
+                            </tr>
+                            <tr>
+                                <td>Descripcion:</td>
+                                <td>@medico.getDescripcionMedico()</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+            </div>
         </div>
     </div>
 </div>

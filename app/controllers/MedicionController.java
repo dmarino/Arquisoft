@@ -6,6 +6,7 @@ import com.google.inject.Inject;
 import dispatchers.AkkaDispatcher;
 import models.Consejo;
 import models.Medicion;
+import models.Medico;
 import play.libs.Json;
 import play.libs.concurrent.HttpExecutionContext;
 import play.mvc.Controller;
@@ -153,8 +154,9 @@ public class MedicionController extends Controller {
     }
 
     public Result lista() {
+        Medico me = Medico.FINDER.byId(1L);
         List<Medicion> m= Medicion.FINDER.all();
-        return ok(views.html.mediciones.render(m));
+        return ok(views.html.mediciones.render(me.getNombreMedico(), m));
     }
 
     public Result detalle(Long id) {

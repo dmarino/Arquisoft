@@ -31,42 +31,72 @@ class pacientes extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,F
 
 Seq[Any](format.raw/*1.44*/("""
 
-"""),_display_(/*3.2*/main("Hospital Cardiologico de Santa Fe")/*3.43*/ {_display_(Seq[Any](format.raw/*3.45*/("""
-
-"""),format.raw/*5.1*/("""<div class="container">
-    <div id="page-wrapper">
-        <h1>&nbsp;</h1>
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                            <thead>
-                            <tr>
-                                <th>Documento</th>
-                                <th>Nombre</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            """),_display_(/*18.30*/for(paciente <- pacientes) yield /*18.56*/ {_display_(Seq[Any](format.raw/*18.58*/("""
-                            """),format.raw/*19.29*/("""<tr>
-                                <td><a href="../HospitalSantaFe/pacientes/"""),_display_(/*20.76*/paciente/*20.84*/.getDocumento),format.raw/*20.97*/("""">"""),_display_(/*20.100*/paciente/*20.108*/.getDocumento()),format.raw/*20.123*/("""</a></td>
-                                <td>"""),_display_(/*21.38*/paciente/*21.46*/.getNombre()),format.raw/*21.58*/("""</td>
-                            </tr>
-                            """)))}),format.raw/*23.30*/("""
-                            """),format.raw/*24.29*/("""</tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+"""),_display_(/*3.2*/main(nombre)/*3.14*/ {_display_(Seq[Any](format.raw/*3.16*/("""
+"""),format.raw/*4.1*/("""<div class="navbar-default sidebar" role="navigation" style=" background-color: rgb(150,196,216)">
+    <div class="sidebar-nav navbar-collapse">
+        <ul class="nav" id="side-menu">
+            <li>
+                <a href=""""),_display_(/*8.27*/routes/*8.33*/.PacienteController.lista()),format.raw/*8.60*/("""" style="color: #fff"><i class="fa fa-male fa-fw"></i> Ver Listado de Pacientes</a>
+            </li>
+            <li>
+                <a href=""""),_display_(/*11.27*/routes/*11.33*/.PacienteController.detalle(1L)),format.raw/*11.64*/("""" style="color: #fff"><i class="fa fa-search fa-fw"></i> Buscar Paciente <span class="fa arrow"></span> </a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="#" style="color: #fff">Buscar paciente por nombre</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: #fff">Buscar paciente por documento</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: #fff">Buscar paciente por correo electronico</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href=""""),_display_(/*25.27*/routes/*25.33*/.MedicionController.lista()),format.raw/*25.60*/("""" style="color: #fff"><i class="fa fa-bar-chart fa-fw"></i> Historial de mediciones <span class="fa arrow"></span> </a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="#" style="color: #fff">Ver todas las mediciones</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: #fff">Ver mediciones en rango</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href=""""),_display_(/*36.27*/routes/*36.33*/.MedicoController.lista()),format.raw/*36.58*/("""" style="color: #fff"><i class="fa fa-user-md fa-fw"></i> Buscar Colegas</a>
+            </li>
+        </ul>
     </div>
-</div> <!-- /container -->
-<footer class="footer">
+    <!-- /.sidebar-collapse -->
+</div>
+<!-- /.navbar-static-side -->
+</nav>
+
+<div id="page-wrapper">
     <div class="container">
-        <p class="text-muted"> <a href=""""),_display_(/*34.42*/routes/*34.48*/.HomeController.index()),format.raw/*34.71*/("""">inicio</a> - pacientes</p>
+        <p class="text-muted"> <a href=""""),_display_(/*47.42*/routes/*47.48*/.HomeController.index()),format.raw/*47.71*/("""">inicio</a> - pacientes</p>
     </div>
-</footer>
-
-""")))}),format.raw/*38.2*/("""
+    <div class="container">
+        <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+            <thead>
+            <tr>
+                <th>Documento</th>
+                <th>Nombre</th>
+            </tr>
+            </thead>
+            <tbody>
+            """),_display_(/*58.14*/for(paciente <- pacientes) yield /*58.40*/ {_display_(Seq[Any](format.raw/*58.42*/("""
+            """),format.raw/*59.13*/("""<tr>
+                <td><a href="../HospitalSantaFe/pacientes/"""),_display_(/*60.60*/paciente/*60.68*/.getDocumento),format.raw/*60.81*/("""">"""),_display_(/*60.84*/paciente/*60.92*/.getDocumento()),format.raw/*60.107*/("""</a></td>
+                <td>"""),_display_(/*61.22*/paciente/*61.30*/.getNombre()),format.raw/*61.42*/("""</td>
+            </tr>
+            """)))}),format.raw/*63.14*/("""
+            """),format.raw/*64.13*/("""</tbody>
+        </table>
+    </div> <!-- /container -->
+</div>
+""")))}),format.raw/*68.2*/("""
 """))
       }
     }
@@ -87,11 +117,11 @@ Seq[Any](format.raw/*1.44*/("""
 object pacientes extends pacientes_Scope0.pacientes
               /*
                   -- GENERATED --
-                  DATE: Sun May 14 21:43:51 COT 2017
+                  DATE: Mon May 15 07:57:50 COT 2017
                   SOURCE: C:/Users/PANA/Documents/arquisoft/proyecto/Arquisoft/app/views/pacientes.scala.html
-                  HASH: 7e7a2d5984fc055f8696ad60c9d33c184c062c27
-                  MATRIX: 768->1|905->43|935->48|984->89|1023->91|1053->95|1692->707|1734->733|1774->735|1832->765|1940->846|1957->854|1991->867|2022->870|2040->878|2077->893|2152->941|2169->949|2202->961|2304->1032|2362->1062|2656->1329|2671->1335|2715->1358|2801->1414
-                  LINES: 27->1|32->1|34->3|34->3|34->3|36->5|49->18|49->18|49->18|50->19|51->20|51->20|51->20|51->20|51->20|51->20|52->21|52->21|52->21|54->23|55->24|65->34|65->34|65->34|69->38
+                  HASH: db35609e0f6e3747aa846b54386a7c12ab568ff4
+                  MATRIX: 768->1|905->43|935->48|955->60|994->62|1022->64|1280->296|1294->302|1341->329|1516->477|1531->483|1583->514|2295->1199|2310->1205|2358->1232|2920->1767|2935->1773|2981->1798|3309->2099|3324->2105|3368->2128|3758->2491|3800->2517|3840->2519|3882->2533|3974->2598|3991->2606|4025->2619|4055->2622|4072->2630|4109->2645|4168->2677|4185->2685|4218->2697|4288->2736|4330->2750|4429->2819
+                  LINES: 27->1|32->1|34->3|34->3|34->3|35->4|39->8|39->8|39->8|42->11|42->11|42->11|56->25|56->25|56->25|67->36|67->36|67->36|78->47|78->47|78->47|89->58|89->58|89->58|90->59|91->60|91->60|91->60|91->60|91->60|91->60|92->61|92->61|92->61|94->63|95->64|99->68
                   -- GENERATED --
               */
           

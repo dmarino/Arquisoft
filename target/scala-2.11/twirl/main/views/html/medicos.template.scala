@@ -21,68 +21,76 @@ import play.data._
 import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 
-class medicos extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template1[List[Medico],play.twirl.api.HtmlFormat.Appendable] {
+class medicos extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template2[String,List[Medico],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(medicos: List[Medico]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(nombre: String)(medicos: List[Medico]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.25*/("""
+Seq[Any](format.raw/*1.41*/("""
 
-"""),_display_(/*3.2*/main("Hospital Cardiologico de Santa Fe")/*3.43*/ {_display_(Seq[Any](format.raw/*3.45*/("""
-
-"""),format.raw/*5.1*/("""<div class="container">
-    <div id="page-wrapper">
-        <h1>&nbsp;</h1>
-        """),_display_(/*8.10*/for(medico <- medicos) yield /*8.32*/ {_display_(Seq[Any](format.raw/*8.34*/("""
-        """),format.raw/*9.9*/("""<div class="container">
-            <h3 class="panel-title">"""),_display_(/*10.38*/medico/*10.44*/.getNombreMedico()),format.raw/*10.62*/("""</h3>
-        </div>
-
-        <div class="row">
-            <div class="span3">
-                <img src="http://adagiohospice.com/secure/wp-content/uploads/2014/11/Nurse-Evaluation-270x250.png" />
-            </div>
-            <div class="span9">
-                <table class="table table-user-information">
-                    <tbody>
-                    <tr>
-                        <td>Id:</td>
-                        <td>"""),_display_(/*22.30*/medico/*22.36*/.getIdMedico()),format.raw/*22.50*/("""</td>
-                    </tr>
-                    <tr>
-                        <td>Especialidad:</td>
-                        <td>"""),_display_(/*26.30*/medico/*26.36*/.getEspecialidadMedico()),format.raw/*26.60*/("""</td>
-                    </tr>
-                    <tr>
-                        <td>Descripcion:</td>
-                        <td>"""),_display_(/*30.30*/medico/*30.36*/.getDescripcionMedico()),format.raw/*30.59*/("""</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        """)))}),format.raw/*36.10*/("""
-    """),format.raw/*37.5*/("""</div>
-</div>
-
-<footer class="footer">
-    <div class="container" align="center">
-        <p class="text-muted"> <a href=""""),_display_(/*42.42*/routes/*42.48*/.HomeController.index()),format.raw/*42.71*/("""">inicio</a> - medicos</p>
+"""),_display_(/*3.2*/main("nombre")/*3.16*/ {_display_(Seq[Any](format.raw/*3.18*/("""
+"""),format.raw/*4.1*/("""<div class="navbar-default sidebar" role="navigation" style=" background-color: rgb(150,196,216)">
+    <div class="sidebar-nav navbar-collapse">
+        <ul class="nav" id="side-menu">
+            <li>
+                <a href=""""),_display_(/*8.27*/routes/*8.33*/.MedicoController.lista()),format.raw/*8.58*/("""" style="color: #fff"><i class="fa fa-male fa-fw"></i> Ver Listado de Medicos</a>
+            </li>
+            <li>
+                <a href=""""),_display_(/*11.27*/routes/*11.33*/.MedicoController.detalle(1L)),format.raw/*11.62*/("""" style="color: #fff"><i class="fa fa-search fa-fw"></i> Buscar Medico <span class="fa arrow"></span> </a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="#" style="color: #fff">Buscar medico por nombre</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: #fff">Buscar medico por documento</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color: #fff">Buscar medico por correo electronico</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
     </div>
-</footer>
+    <!-- /.sidebar-collapse -->
+</div>
+<!-- /.navbar-static-side -->
+</nav>
 
-""")))}),format.raw/*46.2*/("""
+<div id="page-wrapper">
+    <div class="container">
+        <p class="text-muted"> <a href=""""),_display_(/*33.42*/routes/*33.48*/.HomeController.index()),format.raw/*33.71*/("""">inicio</a> - pacientes</p>
+    </div>
+    <div class="container">
+        <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+            <thead>
+            <tr>
+                <th>Documento</th>
+                <th>Nombre</th>
+            </tr>
+            </thead>
+            <tbody>
+            """),_display_(/*44.14*/for(medico <- medicos) yield /*44.36*/ {_display_(Seq[Any](format.raw/*44.38*/("""
+            """),format.raw/*45.13*/("""<tr>
+                <td><a href="../HospitalSantaFe/medicos/"""),_display_(/*46.58*/medico/*46.64*/.getIdMedico),format.raw/*46.76*/("""">"""),_display_(/*46.79*/medico/*46.85*/.getIdMedico()),format.raw/*46.99*/("""</a></td>
+                <td>"""),_display_(/*47.22*/medico/*47.28*/.getNombreMedico()),format.raw/*47.46*/("""</td>
+            </tr>
+            """)))}),format.raw/*49.14*/("""
+            """),format.raw/*50.13*/("""</tbody>
+        </table>
+    </div> <!-- /container -->
+</div>
+""")))}),format.raw/*54.2*/("""
 """))
       }
     }
   }
 
-  def render(medicos:List[Medico]): play.twirl.api.HtmlFormat.Appendable = apply(medicos)
+  def render(nombre:String,medicos:List[Medico]): play.twirl.api.HtmlFormat.Appendable = apply(nombre)(medicos)
 
-  def f:((List[Medico]) => play.twirl.api.HtmlFormat.Appendable) = (medicos) => apply(medicos)
+  def f:((String) => (List[Medico]) => play.twirl.api.HtmlFormat.Appendable) = (nombre) => (medicos) => apply(nombre)(medicos)
 
   def ref: this.type = this
 
@@ -95,11 +103,11 @@ Seq[Any](format.raw/*1.25*/("""
 object medicos extends medicos_Scope0.medicos
               /*
                   -- GENERATED --
-                  DATE: Thu May 11 00:35:28 COT 2017
+                  DATE: Mon May 15 08:32:22 COT 2017
                   SOURCE: C:/Users/PANA/Documents/arquisoft/proyecto/Arquisoft/app/views/medicos.scala.html
-                  HASH: 6e550012746c79aff76e296e8923820196b276fb
-                  MATRIX: 755->1|873->24|903->29|952->70|991->72|1021->76|1135->164|1172->186|1211->188|1247->198|1336->260|1351->266|1390->284|1858->725|1873->731|1908->745|2072->882|2087->888|2132->912|2295->1048|2310->1054|2354->1077|2520->1212|2553->1218|2708->1346|2723->1352|2767->1375|2851->1429
-                  LINES: 27->1|32->1|34->3|34->3|34->3|36->5|39->8|39->8|39->8|40->9|41->10|41->10|41->10|53->22|53->22|53->22|57->26|57->26|57->26|61->30|61->30|61->30|67->36|68->37|73->42|73->42|73->42|77->46
+                  HASH: 4b7b717db2221fff35426a482df79dd9cb89e9a6
+                  MATRIX: 762->1|896->40|926->45|948->59|987->61|1015->63|1273->295|1287->301|1332->326|1505->472|1520->478|1570->507|2434->1344|2449->1350|2493->1373|2883->1736|2921->1758|2961->1760|3003->1774|3093->1837|3108->1843|3141->1855|3171->1858|3186->1864|3221->1878|3280->1910|3295->1916|3334->1934|3404->1973|3446->1987|3545->2056
+                  LINES: 27->1|32->1|34->3|34->3|34->3|35->4|39->8|39->8|39->8|42->11|42->11|42->11|64->33|64->33|64->33|75->44|75->44|75->44|76->45|77->46|77->46|77->46|77->46|77->46|77->46|78->47|78->47|78->47|80->49|81->50|85->54
                   -- GENERATED --
               */
           

@@ -16,6 +16,7 @@ GET     /HospitalSantaFe/login                      controllers.HomeController.l
 GET     /HospitalSantaFe/perfil                     controllers.HomeController.perfil()
 GET     /HospitalSantaFe/pacientes                  controllers.PacienteController.lista()
 GET     /HospitalSantaFe/pacientes/:id              controllers.PacienteController.detalle(id : Long)
+GET     /HospitalSantaFe/pacientes/:id/Medicion     controllers.PacienteController.detalleMediciones(id : Long)
 GET     /HospitalSantaFe/medicos                    controllers.MedicoController.lista()
 GET     /HospitalSantaFe/medicos/:id                controllers.MedicoController.detalle(id : Long)
 GET     /HospitalSantaFe/consejos                   controllers.ConsejoController.lista()

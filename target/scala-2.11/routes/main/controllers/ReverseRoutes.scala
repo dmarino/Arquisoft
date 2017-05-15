@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/PANA/Documents/arquisoft/proyecto/Arquisoft/conf/routes
-// @DATE:Sun May 14 14:16:00 COT 2017
+// @DATE:Mon May 15 07:53:49 COT 2017
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -36,44 +36,44 @@ package controllers {
   
   }
 
-  // @LINE:22
+  // @LINE:23
   class ReverseMedicionController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:45
+    // @LINE:46
     def deleteMedicion(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("DELETE", _prefix + { _defaultPrefix } + "medicion/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
-    // @LINE:43
+    // @LINE:44
     def getByFechas(inicio:String, fin:String): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "medicion/enRango/" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("inicio", inicio)), Some(implicitly[QueryStringBindable[String]].unbind("fin", fin)))))
     }
   
-    // @LINE:42
+    // @LINE:43
     def getMedicion(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "medicion/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
-    // @LINE:22
+    // @LINE:23
     def lista(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "HospitalSantaFe/mediciones")
     }
   
-    // @LINE:46
+    // @LINE:47
     def updateMedicion(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("PUT", _prefix + { _defaultPrefix } + "medicion/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
-    // @LINE:41
+    // @LINE:42
     def getMediciones(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "medicion")
@@ -103,7 +103,7 @@ package controllers {
     }
 
   
-    // @LINE:75
+    // @LINE:76
     def agregarConsejo(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "paciente/" + implicitly[PathBindable[Long]].unbind("id", id) + "/consejo")
@@ -115,25 +115,31 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "HospitalSantaFe/pacientes/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
-    // @LINE:44
+    // @LINE:19
+    def detalleMediciones(id:Long): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "HospitalSantaFe/pacientes/" + implicitly[PathBindable[Long]].unbind("id", id) + "/Medicion")
+    }
+  
+    // @LINE:45
     def agregarMedicion(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "paciente/" + implicitly[PathBindable[Long]].unbind("id", id) + "/medicion")
     }
   
-    // @LINE:30
+    // @LINE:31
     def deletePaciente(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("DELETE", _prefix + { _defaultPrefix } + "paciente/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
-    // @LINE:31
+    // @LINE:32
     def updatePaciente(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("PUT", _prefix + { _defaultPrefix } + "paciente/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
-    // @LINE:28
+    // @LINE:29
     def getPacienteByName(nombre:String): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "paciente/porNombre/" + implicitly[PathBindable[String]].unbind("nombre", dynamicString(nombre)))
@@ -145,25 +151,25 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "HospitalSantaFe/pacientes")
     }
   
-    // @LINE:55
+    // @LINE:56
     def asignarMedico(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("PUT", _prefix + { _defaultPrefix } + "paciente/" + implicitly[PathBindable[Long]].unbind("id", id) + "/medico")
     }
   
-    // @LINE:29
+    // @LINE:30
     def createPaciente(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "paciente")
     }
   
-    // @LINE:27
+    // @LINE:28
     def getPaciente(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "paciente/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
-    // @LINE:26
+    // @LINE:27
     def getPacientes(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "paciente")
@@ -171,38 +177,38 @@ package controllers {
   
   }
 
-  // @LINE:58
+  // @LINE:59
   class ReverseUrgenciaController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:62
+    // @LINE:63
     def updateUrgencia(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("PUT", _prefix + { _defaultPrefix } + "urgencia/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
-    // @LINE:59
+    // @LINE:60
     def getUrgencia(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "urgencia/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
-    // @LINE:58
+    // @LINE:59
     def getUrgencias(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "urgencias")
     }
   
-    // @LINE:61
+    // @LINE:62
     def deleteUrgencia(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("DELETE", _prefix + { _defaultPrefix } + "eliminarUrgencia/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
-    // @LINE:60
+    // @LINE:61
     def createUrgencia(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "urgencia")
@@ -217,13 +223,13 @@ package controllers {
     }
 
   
-    // @LINE:67
+    // @LINE:68
     def loaderio(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "loaderio-6d160b83d57d4302825f8e2854f38ddc/")
     }
   
-    // @LINE:68
+    // @LINE:69
     def enviar(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "enviar")
@@ -264,38 +270,38 @@ package controllers {
   
   }
 
-  // @LINE:34
+  // @LINE:35
   class ReverseSensorController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:38
+    // @LINE:39
     def updateSensor(idSensor:Long): Call = {
       import ReverseRouteContext.empty
       Call("PUT", _prefix + { _defaultPrefix } + "sensor/" + implicitly[PathBindable[Long]].unbind("idSensor", idSensor))
     }
   
-    // @LINE:37
+    // @LINE:38
     def deleteSensor(idSensor:Long): Call = {
       import ReverseRouteContext.empty
       Call("DELETE", _prefix + { _defaultPrefix } + "sensor/" + implicitly[PathBindable[Long]].unbind("idSensor", idSensor))
     }
   
-    // @LINE:36
+    // @LINE:37
     def createSensor(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "sensor")
     }
   
-    // @LINE:35
+    // @LINE:36
     def getSensor(idSensor:Long): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "sensor/" + implicitly[PathBindable[Long]].unbind("idSensor", idSensor))
     }
   
-    // @LINE:34
+    // @LINE:35
     def getSensores(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "sensor")
@@ -303,38 +309,38 @@ package controllers {
   
   }
 
-  // @LINE:21
+  // @LINE:22
   class ReverseConsejoController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:76
+    // @LINE:77
     def deleteConsejo(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("DELETE", _prefix + { _defaultPrefix } + "consejo/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
-    // @LINE:73
+    // @LINE:74
     def getConsejos(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "consejo")
     }
   
-    // @LINE:77
+    // @LINE:78
     def updateConsejo(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("PUT", _prefix + { _defaultPrefix } + "consejo/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
-    // @LINE:21
+    // @LINE:22
     def lista(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "HospitalSantaFe/consejos")
     }
   
-    // @LINE:74
+    // @LINE:75
     def getConsejo(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "consejo/" + implicitly[PathBindable[Long]].unbind("id", id))
@@ -342,14 +348,14 @@ package controllers {
   
   }
 
-  // @LINE:70
+  // @LINE:71
   class ReverseHireFireController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:70
+    // @LINE:71
     def recibir(hirefire:String): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "hirefire/" + implicitly[PathBindable[String]].unbind("hirefire", dynamicString(hirefire)) + "/info")
@@ -357,56 +363,56 @@ package controllers {
   
   }
 
-  // @LINE:19
+  // @LINE:20
   class ReverseMedicoController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:20
+    // @LINE:21
     def detalle(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "HospitalSantaFe/medicos/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
-    // @LINE:50
+    // @LINE:51
     def getMedico(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "medico/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
-    // @LINE:49
+    // @LINE:50
     def getMedicos(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "medico")
     }
   
-    // @LINE:51
+    // @LINE:52
     def getMedicoByEmail(email:String): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "medico" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("email", email)))))
     }
   
-    // @LINE:54
+    // @LINE:55
     def updateMedico(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("PUT", _prefix + { _defaultPrefix } + "medico/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
-    // @LINE:52
+    // @LINE:53
     def createMedico(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "medico")
     }
   
-    // @LINE:53
+    // @LINE:54
     def deleteMedico(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("DELETE", _prefix + { _defaultPrefix } + "medico/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
-    // @LINE:19
+    // @LINE:20
     def lista(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "HospitalSantaFe/medicos")
